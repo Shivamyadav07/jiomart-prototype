@@ -24,8 +24,8 @@ const data = [
   {
     id: 1,
     title: "ONNIX KURTA PAJAMA FOR MEN",
-    price: 599,
-    strikedPrice: 2499,
+    price: "599.00",
+    strikedPrice: "2499.00",
     soldBy: "ONNIX",
     image:
       "https://www.jiomart.com/images/product/600x750/rvmoycdnw0/onnix-kurta-pajama-for-men-product-images-rvmoycdnw0-0-202205150522.jpg",
@@ -35,8 +35,8 @@ const data = [
   {
     id: 2,
     title: "Majestic Man Men White Pure Cotton Pack of 1 Kurta",
-    price: 499,
-    strikedPrice: 1499,
+    price: "499.00",
+    strikedPrice: "1499.00",
     soldBy: "Polestar Etail",
     image:
       "https://www.jiomart.com/images/product/600x750/rv1lnaemqh/majestic-man-men-white-pure-cotton-pack-of-1-kurta-product-images-rv1lnaemqh-0-202205291026.jpg",
@@ -46,8 +46,8 @@ const data = [
   {
     id: 3,
     title: "Majestic Man Men Black Pure Cotton Pack of 1 Kurta",
-    price: 499,
-    strikedPrice: 1499,
+    price: "499.00",
+    strikedPrice: "1499.00",
     soldBy: "Koovs",
     image:
       "https://www.jiomart.com/images/product/original/rvqqrbzzsb/majestic-man-men-black-pure-cotton-pack-of-1-kurta-product-images-rvqqrbzzsb-0-202205291027.jpg",
@@ -57,8 +57,8 @@ const data = [
   {
     id: 4,
     title: "Home One Star Blue Plastic Container 1+ 2+ 4 L (Set of 3)",
-    price: 99,
-    strikedPrice: 299,
+    price: "99.00",
+    strikedPrice: "299.00",
     soldBy: "Reliance Retail",
     image:
       "https://www.jiomart.com/images/product/600x600/491934147/home-one-star-blue-plastic-container-1-2-4-l-set-of-3-product-images-o491934147-p590041313-0-202207081851.jpg",
@@ -67,14 +67,14 @@ const data = [
 
 const CartPage = () => {
   const [total, setTotal] = useState(
-    data.reduce((acc, item) => acc + item.price, 0)
+    data.reduce((acc, item) => acc + Number(item.price), 0)
   );
 
   const [mrpTotal, setMRPTotal] = useState(
-    data.reduce((acc, item) => acc + item.strikedPrice, 0)
+    data.reduce((acc, item) => acc + Number(item.strikedPrice), 0)
   );
   const [totalDiscount, setTotalDiscount] = useState(
-    data.reduce((acc, item) => acc + (item.strikedPrice - item.price), 0)
+    data.reduce((acc, item) => acc + Number(item.strikedPrice - item.price), 0)
   );
 
   return (
@@ -115,7 +115,7 @@ const CartPage = () => {
       </Container>
       <Container border="1px solid red" maxW="40%">
         <CartOrderPayment />
-        <Container bgColor="white" my="4" borderRadius="4" p="5">
+        <Container bgColor="white" my="8" borderRadius="4" p="5">
           <Flex justify="space-between" align="center">
             <Text fontSize="xl" fontWeight="bold">
               Apply Coupon
@@ -133,7 +133,11 @@ const CartPage = () => {
             <InputLeftElement
               pointerEvents="none"
               children={
-                <Image src="https://www.jiomart.com/msassets/images/icons/offer-grey.svg" />
+                <Image
+                  src="https://www.jiomart.com/msassets/images/icons/offer-grey.svg"
+                  w="7"
+                  h="7"
+                />
               }
             />
             <Input variant="flushed" placeholder="Enter Coupon Code" />
@@ -146,6 +150,34 @@ const CartPage = () => {
             />
           </InputGroup>
         </Container>
+        <Container bgColor="white" borderRadius="4" p="3" mt="10">
+          <Text align="left" fontWeight="bold" fontSize="xl" mb="5">
+            Payment Details
+          </Text>
+          <VStack divider={<StackDivider borderColor="grey" />} align="left">
+            <Flex justify="space-between" fontWeight="semibold">
+              <Text>MRP Total</Text>
+              <Text>₹{mrpTotal.toFixed(2)}</Text>
+            </Flex>
+            <Flex justify="space-between" fontWeight="semibold">
+              <Text>Product Discount</Text>
+              <Text>₹{totalDiscount.toFixed(2)}</Text>
+            </Flex>
+            <Flex justify="space-between" fontWeight="bold">
+              <Text>Total Amount</Text>
+              <Text>₹{total}</Text>
+            </Flex>
+            <Box align="right" fontWeight="semibold" color="green">
+              <Text>You Save ₹{totalDiscount.toFixed(2)}</Text>
+            </Box>
+          </VStack>
+        </Container>
+        <Box align="right" my="3">
+          <Button w="55%" colorScheme="teal">
+            Place Order
+          </Button>
+        </Box>
+
         {/* <Box>
           <Text>MRP Total: {mrpTotal}</Text>
           <Text>Total Discount: {totalDiscount}</Text>
