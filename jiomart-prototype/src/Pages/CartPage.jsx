@@ -12,6 +12,10 @@ import {
   IconButton,
   Icon,
   Divider,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
 } from "@chakra-ui/react";
 import ProductCard from "../components/ProductCard";
 import CartOrderPayment from "../components/CartOrderPayment";
@@ -75,7 +79,7 @@ const CartPage = () => {
 
   return (
     <Flex gap="2" w="80%" m="auto" border="1px solid teal" my="10">
-      <Container border="1px solid black" minW="55%" h="auto">
+      <Container border="1px solid black" minW="60%" h="auto">
         <Box fontSize="2xl" fontWeight="bold" align="left" mb="4">
           My Cart({data.length})
         </Box>
@@ -111,6 +115,37 @@ const CartPage = () => {
       </Container>
       <Container border="1px solid red" maxW="40%">
         <CartOrderPayment />
+        <Container bgColor="white" my="4" borderRadius="4" p="5">
+          <Flex justify="space-between" align="center">
+            <Text fontSize="xl" fontWeight="bold">
+              Apply Coupon
+            </Text>
+            <Text
+              color="red"
+              fontWeight="semibold"
+              fontSize="sm"
+              cursor="pointer"
+            >
+              VIEW ALL
+            </Text>
+          </Flex>
+          <InputGroup my="4">
+            <InputLeftElement
+              pointerEvents="none"
+              children={
+                <Image src="https://www.jiomart.com/msassets/images/icons/offer-grey.svg" />
+              }
+            />
+            <Input variant="flushed" placeholder="Enter Coupon Code" />
+            <InputRightElement
+              children={
+                <Text fontWeight="500" cursor="pointer">
+                  Apply
+                </Text>
+              }
+            />
+          </InputGroup>
+        </Container>
         {/* <Box>
           <Text>MRP Total: {mrpTotal}</Text>
           <Text>Total Discount: {totalDiscount}</Text>
