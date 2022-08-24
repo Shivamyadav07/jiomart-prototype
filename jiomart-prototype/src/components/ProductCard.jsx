@@ -3,8 +3,35 @@ import React, { useState } from "react";
 import { Flex, Box, Image, Text, IconButton } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({
+  item,
+  setTotal,
+  total,
+  mrpTotal,
+  totalDiscount,
+  setMRPTotal,
+  setTotalDiscount,
+}) => {
   const [count, setCount] = useState(1);
+
+  const handleDecrease = () => {
+    setCount(() => count - 1);
+    console.log(total);
+    console.log(item.price);
+    setTotal(() => total - item.price);
+    setMRPTotal(() => mrpTotal - item.strikedPrice);
+    setTotalDiscount(() => totalDiscount - (item.strikedPrice - item.price));
+  };
+
+  const handleIncrease = () => {
+    setCount(() => count + 1);
+    console.log(total);
+    console.log(item.price);
+    setTotal(() => total + item.price);
+    setTotal(() => total + item.price);
+    setMRPTotal(() => mrpTotal + item.strikedPrice);
+    setTotalDiscount(() => totalDiscount + (item.strikedPrice - item.price));
+  };
   return (
     <Flex my="3" w="100%" border="1px solid teal" h="max-content">
       <Box border="1px solid black" w="25%" h="12rem">
@@ -48,7 +75,7 @@ const ProductCard = ({ item }) => {
               borderRadius="50%"
               icon={<MinusIcon />}
               disabled={count === 1}
-              onClick={() => setCount(count - 1)}
+              onClick={handleDecrease}
             />
             <Text px="4">{count}</Text>
             <IconButton
@@ -57,7 +84,7 @@ const ProductCard = ({ item }) => {
               size="md"
               borderRadius="50%"
               icon={<AddIcon />}
-              onClick={() => setCount(count + 1)}
+              onClick={handleIncrease}
             />
           </Flex>
         </Flex>

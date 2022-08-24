@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Box,
@@ -10,9 +10,11 @@ import {
   Button,
   Image,
   IconButton,
+  Icon,
+  Divider,
 } from "@chakra-ui/react";
-
 import ProductCard from "../components/ProductCard";
+import CartOrderPayment from "../components/CartOrderPayment";
 
 const data = [
   {
@@ -60,11 +62,20 @@ const data = [
 ];
 
 const CartPage = () => {
-  const total = data.reduce((acc, item) => acc + item.price, 0);
+  const [total, setTotal] = useState(
+    data.reduce((acc, item) => acc + item.price, 0)
+  );
+
+  const [mrpTotal, setMRPTotal] = useState(
+    data.reduce((acc, item) => acc + item.strikedPrice, 0)
+  );
+  const [totalDiscount, setTotalDiscount] = useState(
+    data.reduce((acc, item) => acc + (item.strikedPrice - item.price), 0)
+  );
 
   return (
-    <Flex gap="2" w="80%" m="auto" border="1px solid teal">
-      <Container border="1px solid black" minW="55%" h="auto" my="4">
+    <Flex gap="2" w="80%" m="auto" border="1px solid teal" my="10">
+      <Container border="1px solid black" minW="55%" h="auto">
         <Box fontSize="2xl" fontWeight="bold" align="left" mb="4">
           My Cart({data.length})
         </Box>
@@ -84,13 +95,27 @@ const CartPage = () => {
           </HStack>
           <VStack divider={<StackDivider borderColor="grey" />}>
             {data.map((item) => (
-              <ProductCard key={item.id} item={item} />
+              <ProductCard
+                key={item.id}
+                item={item}
+                setTotal={setTotal}
+                total={total}
+                mrpTotal={mrpTotal}
+                totalDiscount={totalDiscount}
+                setMRPTotal={setMRPTotal}
+                setTotalDiscount={setTotalDiscount}
+              />
             ))}
           </VStack>
         </Container>
       </Container>
       <Container border="1px solid red" maxW="40%">
-        <Box>Apply Coupon</Box>
+        <CartOrderPayment />
+        {/* <Box>
+          <Text>MRP Total: {mrpTotal}</Text>
+          <Text>Total Discount: {totalDiscount}</Text>
+          <Text>Total Amount: {total}</Text>
+        </Box> */}
       </Container>
     </Flex>
   );
