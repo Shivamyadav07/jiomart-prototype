@@ -1,11 +1,12 @@
-import "./App.css";
-import CartPage from "./Pages/CartPage";
-import React from "react";
+ day-2w
+import './App.css';
+import MainRoutes from './Pages/MainRoutes';
+
 
 function App() {
   return (
-    <div className="App">
-      <CartPage />
+    <div>
+      <MainRoutes/>
     </div>
   );
 }
