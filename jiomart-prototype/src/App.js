@@ -1,12 +1,10 @@
- day-2w
-import './App.css';
-import MainRoutes from './Pages/MainRoutes';
-
+import "./App.css";
+import MainRoutes from "./Pages/MainRoutes";
 
 function App() {
   return (
-    <div>
-      <MainRoutes/>
+    <div style={{ backgroundColor: "#F6F6F7" }}>
+      <MainRoutes />
     </div>
   );
 }
