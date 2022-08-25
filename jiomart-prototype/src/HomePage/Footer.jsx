@@ -1,18 +1,17 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import styled from 'styled-components';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <div>
-        <WrapFooter>
-        
-            <div className="container">
+    <div className='footer-section'>
+
+        <div className="container">
                 <div className="row">
                     <div className='footer'>
                     <div className="footer-col">
                         <h4>MOST POPULAR CATEGORIES</h4>
-                        <ul>
+                        <ul style={{fontSize:"0.3rem"}}>
                             <li><Link to="/">Staples</Link></li>
                             <li><Link to="/">Beverages</Link></li>
                             <li><Link to="/">Personal Care</Link></li>
@@ -71,91 +70,9 @@ const Footer = () => {
             </div>
             
             </div>
-         
-     
-
-        </WrapFooter>
 
     </div>
   )
 }
 
 export default Footer;
-
-export const WrapFooter=styled.div`
-background-color:#f3f3f3;
-font-family:Jio-Light;
-min-height:25rem;
-
-.container{
-    height: 23rem;
-    width:100%;
-    background-color: #f3f3f3;
-    padding: 3rem 0 1.5rem 0;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;  
-}
-
-.footer{
-    display:flex;
-    width:52rem;
-}
-
-.footer-col {
-    width: 18rem;
-    margin-left:7rem;
-   
-}
-
-.footer-col-right1 {
-    width: 22rem;
-}
-h4{
-    color:#000;
-}
-ul {
-    margin-top:0.6rem;
-    list-style: none;
-    color: rgb(121, 121, 121);
-    font-size:0.8rem;
-    line-height:1.5rem;
-}
-
-.line1{
-    border:1px solid gray;
-    height:20rem;
-    width:0.1rem;
-    margin-left:6rem;
-   
-    
-}
-.footer-col-right1 p {
-    font-size: 0.8rem;
-    line-height: 0.9rem;
-    text-decoration: none;
-    color: rgb(121, 121, 121);
-    margin-bottom: 1rem;
-    font-weight:100
-}
-
-.footer-col-right1 p span {
-    color: #008ecc;
-}
-
-.bottom {
-    height:4.5rem;
-    margin:auto;
-}
-
-.last {
-   display: flex;
-   height:2rem;
-   justify-content:space-around;
-   font-size:0.8rem;
-}
-
-
-`

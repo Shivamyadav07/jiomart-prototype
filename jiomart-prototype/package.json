@@ -22,9 +22,11 @@
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
+    "react-slideshow-image": "^4.0.4",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
-    "styled-components": "^5.3.5",
+    "slick-carousel": "^1.8.1",
     "use-throttle": "^0.0.3",
     "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4"

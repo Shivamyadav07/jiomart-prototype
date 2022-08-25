@@ -1,15 +1,18 @@
 import React from 'react'
-import styled from 'styled-components'
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import {Link} from "react-router-dom"
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Link } from 'react-router-dom';
+
+import './Header.css';
 // import SearchBar from './SearchBar';
 
 const Header = () => {
   return (
-   
-<WrapHeader>
+   <div className="merge">
+<div className="main">
 <div className="navbar">
          <div className='menu'>
             <DehazeIcon style={{fontSize:"2rem"}}/>
@@ -43,84 +46,212 @@ const Header = () => {
         </div>
         </Link>
         </div>
-        </WrapHeader>
+        </div>
    
+
+
+
+   <div className="Nav-start">
+      <div className='main-header'>
+        <div className="dropdown">
+          <div className='location'>
+            <LocationOnIcon/>
+           </div>
+        <div className='deliver' >
+            <p className='write'  style={{paddingBottom:"0.8rem",color:"gray"}}>Deliver to</p>
+            <p className='write' style={{fontSize:"0.9rem",fontWeight:"600"}}>400205</p>
+        </div>
+        </div>
+
+        <div className="dropdown">
+          <Link to="/" className="dropbtn" >Groceries </Link>
+          <Link to="/" className='downkey'><KeyboardArrowDownIcon/></Link>
+          <div className="dropdown-content">
+            <div className="flex-content">
+              <div className='size1'>
+               <li>Fruits & Vegetables</li>
+               <li>Dairy & Bakery</li>
+               <li>Staples</li>
+               <li>Snacks & Branded Foods</li>
+               <li>Beverages</li>
+               <li>Personal Care</li>
+              </div>
+        
+              <div className='size1'>
+              <li>Home Care</li>
+                <li>Home & Kitchen</li>
+                <li>Mom & Baby Care</li>
+                <li>Books</li>
+                <li>Pets</li>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+
+
+        <div className="dropdown">
+          <Link to="/" className="dropbtn" >Premium Fruits</Link>
+          <Link to="/" className='downkey'><KeyboardArrowDownIcon/></Link>
+          <div className="dropdown-content">
+            <div className="flex-content">
+              <div className='size1'>
+               <li>Apples & Pears</li>
+               <li>Avocado,Peach,Plum</li>
+               <li>Banana,Melons & Coconuts</li>
+               <li>Cherries,Berries & Exotic</li>
+               <li>Fruits</li>
+               <li>Citrus,Mango & Grapes</li>
+              </div>
+        
+              <div className='size1'>
+                <li>Gift</li>
+                <li>Gift, Assorted & XL</li>
+                <li>Pomegranate, Papaya &</li>
+                <li>Pineapple</li>
+                <li>Seasonal & Minor Fruits</li>
+                <li>Premium Fruits</li>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        
+        <div className="dropdown">
+          <Link to="/" className="dropbtn" >Home & Kitchen</Link>
+          <Link to="/" className='downkey'><KeyboardArrowDownIcon/></Link>
+          <div className="dropdown-content">
+            <div className="flex-content">
+              <div className='size1'>
+               <li>Kitchenware</li>
+               <li>Dining</li>
+               <li>Furnishing</li>
+               <li>Home Decor</li>
+               <li>Furniture</li>
+               <li>Home Appliances</li>
+               <li>Toys, Games & Fitness</li>
+               <li>Electrical</li>
+               <li>Bathroom & Laundry</li>
+               <li>Accessories</li>
+               <li>Disposables</li>
+               <li>Stationery</li>
+               <li>Bags & Travel Luggage</li>
+              </div>
+        
+              <div className='size1'>
+               <li>Mops, Brushes & Scrubs</li>
+               <li>Auto Care</li>
+               <li>Garden & Outdoor</li>
+               <li>Carpentry & work accessories</li>
+               <li>Pooja Needs</li>
+               <li>Bathroom & Laundry</li>
+               <li>Industrial & Scientific Supplies</li>
+               <li>Homes Safety & Automation</li>
+               <li>Kitchen & Bath Fixtures</li>
+               <li>Paint Wall Treatments &</li>
+               <li>Supplies</li>
+               <li>Power & Hand Tools</li>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div className="dropdown">
+          <Link to="/" className="dropbtn" >Fashion</Link>
+          <Link to="/" className='downkey'><KeyboardArrowDownIcon/></Link>
+          <div className="dropdown-content">
+            <div className="flex-content">
+              <div className='size1'>
+               <li>Men</li>
+               <li>Women</li>
+               <li>Boys</li>
+               <li>Girls</li>
+               <li>Junior Boys</li>
+               <li>Infants</li>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+
+        <div className="dropdown">
+          <Link to="/" className="dropbtn" >Electronics</Link>
+          <Link to="/" className='downkey'><KeyboardArrowDownIcon/></Link>
+          <div className="dropdown-content">
+            <div className="flex-content">
+              <div className='size1'>
+               <li>Mobiles & Tablets</li>
+               <li>TV & Speakers</li>
+               <li>Home Appliances</li>
+               <li>Computers</li>
+               <li>Cameras</li>
+               <li>Kitchen Appliances</li>
+               <li>Personal Care & Grooming</li>
+               <li>Smart Devices</li>
+               <li>Gaming</li>
+               <li>Accessories</li>
+               <li>Phones</li>
+               <li>Office Products</li>
+               <li>Health Care Devices</li>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+
+        <div className="dropdown">
+          <Link to="/" className="dropbtn" >Beauty</Link>
+          <Link to="/" className='downkey'><KeyboardArrowDownIcon/></Link>
+          <div className="dropdown-content">
+            <div className="flex-content">
+              <div className='size1'>
+              <li>Make-Up</li>
+              <li>Hair</li>
+              <li>Skin Care</li>
+              <li>Fragrances</li>
+              <li>Personal Care</li>
+              <li>Mom & Baby</li>
+              <li>Men's Grooming</li>
+              <li>Tools & Appliances</li>
+              <li>Wellness</li>
+              <li>Fitness</li>
+              <li>Ayush</li>
+              <li>Treatment</li>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+
+        <div className="dropdown">
+          <Link to="/" className="dropbtn" >Jewellery</Link>
+          <Link to="/" className='downkey'><KeyboardArrowDownIcon/></Link>
+          <div className="dropdown-content">
+            <div className="flex-content">
+              <div className='size1'>
+               <li>Fine Jewellery</li>
+            
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+      </div>
+
+
+
+      </div>
   )
 }
 
 export default Header;
-
-export const WrapHeader=styled.div`
-background-color: #008ecc;
-
-
-.navbar {
-    display: grid;
-    grid-template-columns: 7rem 7rem 52rem 10rem 8rem;
-    align-items: center;
-    text-align: center;
-    color: white;
-    min-height:4.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color: #008ecc;
-
-}
-.menu{
-    margin-left:4rem;
-    height:3rem;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.nameLogo {
-    height:3rem;
-}
-
-.jio{
-    font-weight:700;
-    height:1.8rem;
-    font-size:1.6rem;
-}
-
-.beta{
-    font-size:0.7rem;
-    margin-left:4rem;
-    font-weight:600;
-}
-
-.searchItem {
-    outline-style: none;
-}
-
-.navbar .navinnerdiv>div {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.navicon {
-    cursor: pointer;
-}
-
-.navbar .navText {
-    font-size:0.8rem;
-    font-weight: 600;
-    margin-left:0.1rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-.signU{
-  
-    margin-top:0.3rem;
-}
-.navbar input {
-    width: 50rem;
-    height: 2.3rem;
-    border-radius: 0.3rem;
-    border: none;
-    padding-left: 1rem;
-}
-
-`
 
 
