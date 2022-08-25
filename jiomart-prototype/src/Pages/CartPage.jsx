@@ -16,6 +16,17 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
+  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  RadioGroup,
+  Stack,
+  Radio,
 } from "@chakra-ui/react";
 import ProductCard from "../components/ProductCard";
 import CartOrderPayment from "../components/CartOrderPayment";
@@ -77,6 +88,9 @@ const CartPage = () => {
     data.reduce((acc, item) => acc + Number(item.strikedPrice - item.price), 0)
   );
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [value, setValue] = useState(0);
+
   return (
     <Flex gap="2" w="80%" m="auto" border="1px solid teal" my="10">
       <Container border="1px solid black" minW="60%" h="auto">
@@ -125,9 +139,79 @@ const CartPage = () => {
               fontWeight="semibold"
               fontSize="sm"
               cursor="pointer"
+              onClick={onOpen}
             >
               VIEW ALL
             </Text>
+            <Drawer
+              isOpen={isOpen}
+              placement="right"
+              onClose={onClose}
+              // finalFocusRef={btnRef}
+            >
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton />
+                <DrawerHeader>Select Coupons</DrawerHeader>
+                <Divider borderColor="grey" />
+
+                <DrawerBody>
+                  <Text fontSize="lg" fontWeight="500">
+                    Coupons
+                  </Text>
+                  <RadioGroup onChange={setValue} value={value} my="4">
+                    <Stack direction="column">
+                      <Box>
+                        <Radio value="1">
+                          <Text fontWeight="bold" color="black">
+                            SAVE250
+                          </Text>
+                        </Radio>
+                        <Text pl="6">
+                          Flat Rs. 250 OFF on fashion products above Rs. 999
+                        </Text>
+                      </Box>
+                      <Divider borderColor="grey" />
+                      <Box>
+                        <Radio value="2">
+                          <Text fontWeight="bold" color="black">
+                            SAVE1000
+                          </Text>
+                        </Radio>
+                        <Text pl="6">
+                          Flat Rs. 1000 OFF on Mobile & Electronics purchase
+                          above Rs. 10000. Applicable once per user.
+                        </Text>
+                      </Box>
+                      <Divider borderColor="grey" />
+                      <Box>
+                        <Radio value="3">
+                          <Text fontWeight="bold" color="black">
+                            ITSPREMIUM200
+                          </Text>
+                        </Radio>
+                        <Text pl="6">
+                          Get Rs 200 off on the purchase of Premium Fruits worth
+                          Rs 999
+                        </Text>
+                      </Box>
+                      <Divider borderColor="grey" />
+                      <Box>
+                        <Radio value="4">
+                          <Text fontWeight="bold" color="black">
+                            PREMIUMFRUITS100
+                          </Text>
+                        </Radio>
+                        <Text pl="6">
+                          Get Rs 100 off on the purchase of Premium Fruits worth
+                          Rs 499
+                        </Text>
+                      </Box>
+                    </Stack>
+                  </RadioGroup>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
           </Flex>
           <InputGroup my="4">
             <InputLeftElement
