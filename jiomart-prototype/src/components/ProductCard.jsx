@@ -18,7 +18,7 @@ const ProductCard = ({
     setCount(() => count - 1);
     console.log(total);
     console.log(item.price);
-    setTotal(() => (total - item.price).toFixed(2));
+    setTotal(() => (Number(total) - Number(item.price)).toFixed(2));
     setMRPTotal(() => mrpTotal - item.strikedPrice);
     setTotalDiscount(() => totalDiscount - (item.strikedPrice - item.price));
   };

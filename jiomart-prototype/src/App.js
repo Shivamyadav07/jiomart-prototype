@@ -3,7 +3,7 @@ import MainRoutes from "./Pages/MainRoutes";
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundColor: "#F6F6F7" }}>
       <MainRoutes />
     </div>
   );
