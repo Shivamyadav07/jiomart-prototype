@@ -1,0 +1,16 @@
+.sortdiv{
+    margin-top: 30px;
+    margin-bottom: 24px;
+    display: flex;
+    width: 910px;
+    justify-content:space-between;
+}
+.productNum{
+    padding: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: black;
+    font-weight: 500;
+}
+.mybutton{
+    margin-left: 10px;
+}
