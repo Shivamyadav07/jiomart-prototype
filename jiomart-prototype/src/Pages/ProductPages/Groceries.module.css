@@ -1,0 +1,7 @@
+.maindiv{
+    padding: 16px;
+    display: grid;
+    grid-template-columns:auto auto;
+    column-gap: 35px;
+    background-color: rgb(243,243,243);
+}

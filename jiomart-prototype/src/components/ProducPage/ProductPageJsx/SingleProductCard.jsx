@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
-import styles from './SingleProductCard.module.css'
+import styles from '../ProductPageModuleCss/SingleProductCard.module.css'
 
 export const SingleProductCard = () => {
     return (
@@ -16,7 +16,7 @@ export const SingleProductCard = () => {
                 <img className={styles.discountimg} src="https://i.ibb.co/Yd3ZVDg/badge.png" alt="badge" border="0" />
                 
             </div>
-            <img src='https://www.jiomart.com/images/product/150x150/491963211/jiomart-blue-and-white-polyester-2-fold-umbrella-24-5-inch-product-images-o491963211-p590317361-0-202205180135.jpg' alt='Product image' />
+            <img src='https://www.jiomart.com/images/product/150x150/491963211/jiomart-blue-and-white-polyester-2-fold-umbrella-24-5-inch-product-images-o491963211-p590317361-0-202205180135.jpg' alt='Productimage' />
             <p className={styles.heading}>Jiomart Blue and White Polyester 2 Fold Umbrella 62.2 cm</p>
 
 
