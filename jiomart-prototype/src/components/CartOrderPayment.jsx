@@ -16,14 +16,24 @@ const CartOrderPayment = () => {
           w="6"
           h="6"
           mr="2"
-          color={location.pathname == "/cart" ? "teal" : "grey"}
+          color={
+            location.pathname === "/cart" || location.pathname === "/order"
+              ? "teal"
+              : "grey"
+          }
         />{" "}
         Your Cart
       </Flex>
       <Divider w="3rem" borderColor="black" />
       <Flex align="center" fontSize="sm" fontWeight="500">
-        <Icon as={RiTodoFill} w="6" h="6" mr="2" color="#ACACAD" /> Order
-        Summary
+        <Icon
+          as={RiTodoFill}
+          w="6"
+          h="6"
+          mr="2"
+          color={location.pathname === "/order" ? "teal" : "#ACACAD"}
+        />{" "}
+        Order Summary
       </Flex>
       <Divider w="3rem" borderColor="black" />
       <Flex align="center" fontSize="sm" fontWeight="500">

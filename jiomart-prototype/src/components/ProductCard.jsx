@@ -2,36 +2,28 @@ import { Container } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Flex, Box, Image, Text, IconButton } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
+import { useDispatch } from "react-redux";
+import { updateCartData } from "../Redux/CartReducer/action";
+import { useLocation } from "react-router-dom";
 
-const ProductCard = ({
-  item,
-  setTotal,
-  total,
-  mrpTotal,
-  totalDiscount,
-  setMRPTotal,
-  setTotalDiscount,
-}) => {
-  const [count, setCount] = useState(1);
-  // console.log(item);
-  const handleDecrease = () => {
+const ProductCard = ({ item }) => {
+  const dispatch = useDispatch();
+  const [count, setCount] = useState(item.count);
+  const location = useLocation();
+  const handleDecrease = (product) => {
     setCount(() => count - 1);
-    console.log(total);
-    console.log(item.price);
-    setTotal(() => (Number(total) - Number(item.price)).toFixed(2));
-    setMRPTotal(() => mrpTotal - item.strikedPrice);
-    setTotalDiscount(() => totalDiscount - (item.strikedPrice - item.price));
+    console.log("product", product);
+    const payload = { count: product.count - 1 };
+    dispatch(updateCartData(product.id, payload));
   };
 
-  const handleIncrease = () => {
+  const handleIncrease = (product) => {
     setCount(() => count + 1);
-    console.log(typeof total);
-    console.log(typeof item.price);
-    setTotal(() => (Number(total) + Number(item.price)).toFixed(2));
-    setMRPTotal(() => mrpTotal + Number(item.strikedPrice));
-    setTotalDiscount(
-      () => totalDiscount + (Number(item.strikedPrice) - Number(item.price))
-    );
+    console.log("product", product);
+    const payload = {
+      count: product.count + 1,
+    };
+    dispatch(updateCartData(product.id, payload));
   };
   return (
     <Flex my="3" w="100%" h="max-content">
@@ -44,15 +36,16 @@ const ProductCard = ({
         </Text>
         <Flex my="3" align="center">
           <Text fontWeight="semibold" fontSize="xl">
-            {`₹ ${(item.price * count).toFixed(2)}`}
+            {`₹ ${(item.price * item.count).toFixed(2)}`}
           </Text>
           <Text as="s" mx="2">
-            {`₹ ${(item.strikedPrice * count).toFixed(2)}`}
+            {`₹ ${(item.strikedPrice * item.count).toFixed(2)}`}
           </Text>
           <Text color="green" fontWeight="semibold">
-            {`You Save ₹ ${((item.strikedPrice - item.price) * count).toFixed(
-              2
-            )}`}
+            {`You Save ₹ ${(
+              (item.strikedPrice - item.price) *
+              item.count
+            ).toFixed(2)}`}
           </Text>
         </Flex>
         {item.size && (
@@ -68,29 +61,33 @@ const ProductCard = ({
             {item.soldBy}
           </Text>
         </Flex>
-        <Flex justify="space-between">
-          <Text cursor="pointer">SAVE FOR LATER</Text>
-          <Flex align="center">
-            <IconButton
-              colorScheme="teal"
-              aria-label="Call Segun"
-              size="md"
-              borderRadius="50%"
-              icon={<MinusIcon />}
-              disabled={count === 1}
-              onClick={handleDecrease}
-            />
-            <Text px="4">{count}</Text>
-            <IconButton
-              colorScheme="teal"
-              aria-label="Call Segun"
-              size="md"
-              borderRadius="50%"
-              icon={<AddIcon />}
-              onClick={handleIncrease}
-            />
+        {location.pathname === "/cart" && (
+          <Flex justify="space-between">
+            <Text cursor="pointer">SAVE FOR LATER</Text>
+            <Flex align="center">
+              <IconButton
+                colorScheme="teal"
+                aria-label="Call Segun"
+                size="md"
+                borderRadius="50%"
+                icon={<MinusIcon />}
+                disabled={item.count === 1}
+                onClick={() => handleDecrease(item)}
+              />
+              <Text px="4">{count}</Text>
+              <IconButton
+                colorScheme="teal"
+                aria-label="Call Segun"
+                size="md"
+                borderRadius="50%"
+                icon={<AddIcon />}
+                onClick={() => handleIncrease(item)}
+              />
+            </Flex>
           </Flex>
-        </Flex>
+        )}
+
+        {location.pathname === "/order" && <Text>Qty: {item.count}</Text>}
       </Box>
     </Flex>
   );
