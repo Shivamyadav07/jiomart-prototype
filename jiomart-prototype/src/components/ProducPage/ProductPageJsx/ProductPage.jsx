@@ -4,10 +4,10 @@ import { ProductPagePoster } from './ProductPagePoster'
 import { SortingDiv } from './SortingDiv'
 import styles from '../ProductPageModuleCss/ProductPage.module.css'
 
-export const ProductPage = ({data}) => {
+export const ProductPage = ({poster,data}) => {
   return (
     <div className={styles.maindiv}>
-        <ProductPagePoster/>
+        <ProductPagePoster poster={poster}/>
         <SortingDiv/>
         <MultipleProductsSection data={data} />
     </div>
