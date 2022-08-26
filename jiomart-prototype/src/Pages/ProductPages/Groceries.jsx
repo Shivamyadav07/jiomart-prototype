@@ -10,14 +10,14 @@ import {
   BreadcrumbLink,
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
-import { getProductData } from '../../Redux/ProductReducer/action'
+import { getGroceriesData } from '../../Redux/ProductReducer/action'
 
 export const Groceries = () => {
   const products=useSelector(state=>state.productreducer.products);
   const dispatch=useDispatch();
 
   useEffect(()=>{
-    dispatch(getProductData());
+    dispatch(getGroceriesData());
   },[])
 
   
