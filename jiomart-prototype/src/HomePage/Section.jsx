@@ -1,37 +1,54 @@
 import React from 'react'
-import "./Slider.css";
+import styles from "../HomePage/HomePageCss/Section.module.css";
 import { posterimg } from '../data';
 import { mensdata } from '../data';
 import { BigMenData } from '../data';
 import { KidsFashion } from '../data';
 import { HottestDeals } from '../data';
-import Footer from './Footer';
+import {groceries} from '../data';
+import MultipleSlide from './Slide/MultipleSlide';
 
 const Section = () => {
 
   return (
-    <div className='belowSlider'>
-       <div className='off'>
-         <img className='img-s' src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1654714506_Free-Home-Delivery--strip-1240-X-162.jpg" alt=""/>
-         <img className='img-s' src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1660920053_Aug-20_Slim_web.jpg" alt=""/>
+    <div className={styles.belowSlider}>
+       <div className={styles.off}>
+         <img className={styles.imgie} src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1654714506_Free-Home-Delivery--strip-1240-X-162.jpg" alt=""/>
+         <img className={styles.imgie} src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1660920053_Aug-20_Slim_web.jpg" alt=""/>
           <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1661362638_Desktop-DOTD-25th-Camp-A.jpg" alt=""/>
        </div>
        
 
 
-       <div className='vicks'>
-        <img className="img-vick" src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1624041574_web_static.jpg" alt=""/>
+       <div className={styles.vicks}>
+        <img className={styles.imgvick} src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1624041574_web_static.jpg" alt=""/>
        </div>
 
 
-       <div className='top-Deals'>
-           
+       <div className={styles.topDeals}>
+           <MultipleSlide/>
        </div>
 
-       <div className='hotest'>
-       <h3 class="text">Hotest Deals</h3>
+       <div className={styles.groceries}>
+       <h3 class={styles.text}>Top Groceries</h3>
 
-     <div className="hotest-deal">
+     <div className={styles.groceriesD}>
+            {groceries.map((grow)=> (
+              <div className='deal'>
+                  <img style={{border:"1rem"}}
+                  src={grow.image} alt={grow.n} />
+                </div>
+            ))}
+       </div>
+     </div>
+
+
+
+
+       <div className={styles.hotest}>
+       <h3 class={styles.text}>Hotest Deals</h3>
+
+     <div className={styles.hotestD}>
             {HottestDeals.map((deals)=> (
               <div className='deal'>
                   <img style={{borderRadius:"0.5rem"}}
@@ -42,12 +59,12 @@ const Section = () => {
      </div>
 
 
-       <div className='kids-small'>
-       <h3 class="text">Kid's Fashion</h3>
+       <div className={styles.kidssmall}>
+       <h3 class={styles.text}>Kid's Fashion</h3>
 
-     <div className="kids-fashion">
+     <div className={styles.kidsfashion}>
             {KidsFashion.map((kids)=> (
-              <div className='kids'>
+              <div className={styles.kids}>
                   <img style={{borderRadius:"0.5rem"}}
                   src={kids.image} alt={kids.n} />
                 </div>
@@ -56,9 +73,9 @@ const Section = () => {
      </div>
 
 
-       <div className='men-img'>
-        <h3 class="text">Mens Fashion</h3>
-       <div className="men-f">
+       <div className={styles.menimg}>
+        <h3 class={styles.text}>Mens Fashion</h3>
+       <div className={styles.menf}>
             {BigMenData.map((post)=> (
               <div className='post'>
                   <img style={{borderRadius:"0.5rem"}}
@@ -70,10 +87,10 @@ const Section = () => {
 
 
 
-     <div className='mens-small'>
-     <div className="mens-fashion">
+     <div className={styles.menssmall}>
+     <div className={styles.mensfashion}>
             {mensdata.map((pro)=> (
-              <div className='fashion'>
+              <div className={styles.fashion}>
                   <img style={{borderRadius:"0.5rem"}}
                   src={pro.img} alt={pro.n} />
                 </div>
@@ -82,11 +99,11 @@ const Section = () => {
      </div>
 
 
-     <div className='poster-img'>
-       <div className="above-footer">
+     <div className={styles.posterimg}>
+       <div className={styles.abovefooter}>
             {posterimg.map((poster)=> (
-              <div className='poster'>
-                  <img className='mmm'
+              <div className={styles.poster}>
+                  <img className={styles.mmm}
                   src={poster.img} alt={poster.n} />
                 </div>
             ))}
@@ -94,7 +111,6 @@ const Section = () => {
     </div>
 
 <div>
-  <Footer/>
 </div>
 
     </div>

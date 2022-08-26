@@ -6,7 +6,7 @@ import Header from "../HomePage/Header";
 const MainRoutes = () => {
   return (
     <div>
-      <Header/>
+     
      <MainHome/>  
     </div>
   )
