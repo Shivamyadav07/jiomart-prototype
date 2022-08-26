@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './PremiumFruits.module.css'
+import styles from './HomeKitchen.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
@@ -8,16 +8,16 @@ import {
     BreadcrumbLink,
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
-import { getPremiumfruitData } from '../../Redux/ProductReducer/action'
-import { SideBarFilter } from '../../components/ProducPage/ProductPageJsx/SideBarFilter'
+import { getHomeKitchenData } from '../../Redux/ProductReducer/action'
 import { ProductPage } from '../../components/ProducPage/ProductPageJsx/ProductPage'
+import { SideBarFilter } from '../../components/ProducPage/ProductPageJsx/SideBarFilter'
 
-export const PremiumFruits = () => {
-    const premiumFruit = useSelector(state => state.productreducer.premiumFruit);
+export const HomeKitchen = () => {
+    const homeKitchen = useSelector(state => state.productreducer.homeKitchen);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getPremiumfruitData());
+        dispatch(getHomeKitchenData());
     }, [])
 
 
@@ -35,7 +35,10 @@ export const PremiumFruits = () => {
                     </BreadcrumbItem>
 
                     <BreadcrumbItem isCurrentPage>
-                        <BreadcrumbLink href='#'>Premium Fruits</BreadcrumbLink>
+                        <BreadcrumbLink href='#'>Groceries</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem isCurrentPage>
+                        <BreadcrumbLink href='#'>Home & Kitchen</BreadcrumbLink>
                     </BreadcrumbItem>
                 </Breadcrumb>
             </div>
@@ -43,8 +46,8 @@ export const PremiumFruits = () => {
             <div className={styles.maindiv} >
                 <SideBarFilter />
                 <ProductPage
-                    poster='https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-green-pure-natural-organic-fruit-poster-banner-background-image_183522.jpg'
-                    data={premiumFruit}
+                    poster='https://www.jiomart.com/images/category/1687/home-kitchen-20220519.jpeg'
+                    data={homeKitchen}
                 />
             </div>
         </div>

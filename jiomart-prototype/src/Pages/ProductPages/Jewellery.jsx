@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './PremiumFruits.module.css'
+import styles from './Jewellery.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
@@ -8,16 +8,16 @@ import {
     BreadcrumbLink,
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
-import { getPremiumfruitData } from '../../Redux/ProductReducer/action'
+import { getJewelleryData } from '../../Redux/ProductReducer/action'
 import { SideBarFilter } from '../../components/ProducPage/ProductPageJsx/SideBarFilter'
 import { ProductPage } from '../../components/ProducPage/ProductPageJsx/ProductPage'
 
-export const PremiumFruits = () => {
-    const premiumFruit = useSelector(state => state.productreducer.premiumFruit);
+export const Jewellery = () => {
+    const jewellery = useSelector(state => state.productreducer.jewellery);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getPremiumfruitData());
+        dispatch(getJewelleryData());
     }, [])
 
 
@@ -35,7 +35,7 @@ export const PremiumFruits = () => {
                     </BreadcrumbItem>
 
                     <BreadcrumbItem isCurrentPage>
-                        <BreadcrumbLink href='#'>Premium Fruits</BreadcrumbLink>
+                        <BreadcrumbLink href='#'>Jewellery</BreadcrumbLink>
                     </BreadcrumbItem>
                 </Breadcrumb>
             </div>
@@ -43,8 +43,8 @@ export const PremiumFruits = () => {
             <div className={styles.maindiv} >
                 <SideBarFilter />
                 <ProductPage
-                    poster='https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-green-pure-natural-organic-fruit-poster-banner-background-image_183522.jpg'
-                    data={premiumFruit}
+                    poster='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLeiLzbaYpnK1vSWDLDsENpjlO89C5XD6gmQ&usqp=CAU'
+                    data={jewellery}
                 />
             </div>
         </div>
