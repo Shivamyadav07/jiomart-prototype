@@ -1,0 +1,7 @@
+.otpbox{
+    display: none;
+    border: 2px solid red;
+}
+.otpboxdisplay{
+  display: block;
+}
