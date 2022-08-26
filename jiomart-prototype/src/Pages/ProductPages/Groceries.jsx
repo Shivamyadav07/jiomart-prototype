@@ -2,15 +2,25 @@ import React from 'react'
 import { ProductPage } from '../../components/ProducPage/ProductPageJsx/ProductPage'
 import { SideBarFilter } from '../../components/ProducPage/ProductPageJsx/SideBarFilter'
 import styles from './Groceries.module.css'
+import {useDispatch, useSelector} from 'react-redux'
 
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
 } from '@chakra-ui/react'
+import { useEffect } from 'react'
+import { getProductData } from '../../Redux/ProductReducer/action'
 
 export const Groceries = () => {
+  const products=useSelector(state=>state.productreducer.products);
+  const dispatch=useDispatch();
 
+  useEffect(()=>{
+    dispatch(getProductData());
+  },[])
+
+  
   return (
     <div className={styles.home}>
       <div className={styles.toplink}>
@@ -32,7 +42,7 @@ export const Groceries = () => {
 
       <div className={styles.maindiv} >
         <SideBarFilter />
-        <ProductPage />
+        <ProductPage data={products} />
       </div>
     </div>
   )
