@@ -3,8 +3,7 @@ import styles from '../ProductPageModuleCss/MultipleProductsSection.module.css'
 import { Pagination } from './Pagination'
 import { SingleProductCard } from './SingleProductCard'
 
-export const MultipleProductsSection = () => {
-  var arr=[1,2,3,4,5,6,7,8,9,9,9,9]
+export const MultipleProductsSection = ({data}) => {
   return (
     <div className={styles.maindiv}>
       <div className={styles.title}>
@@ -12,8 +11,8 @@ export const MultipleProductsSection = () => {
       </div>
       <div className={styles.productdiv}>
         {
-          arr.map(()=>{
-            return <SingleProductCard />
+          data.map((e)=>{
+            return <SingleProductCard item={e} />
           })
         }
       </div>
