@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import Header from "../HomePage/Header";
-import Navbar from "../HomePage/Navbar";
+import React, { useEffect, useState } from "react";
+// import Header from "../HomePage/Header";
+// import Navbar from "../HomePage/Navbar";
 import {
   Container,
   Box,
@@ -29,86 +29,85 @@ import {
   RadioGroup,
   Stack,
   Radio,
+  useToast,
 } from "@chakra-ui/react";
 import ProductCard from "../components/ProductCard";
 import CartOrderPayment from "../components/CartOrderPayment";
 import { useLocation } from "react-router-dom";
-
-const data = [
-  {
-    id: 1,
-    title: "ONNIX KURTA PAJAMA FOR MEN",
-    price: "599.00",
-    strikedPrice: "2499.00",
-    soldBy: "ONNIX",
-    image:
-      "https://www.jiomart.com/images/product/600x750/rvmoycdnw0/onnix-kurta-pajama-for-men-product-images-rvmoycdnw0-0-202205150522.jpg",
-    size: "38",
-    color: "Black",
-  },
-  {
-    id: 2,
-    title: "Majestic Man Men White Pure Cotton Pack of 1 Kurta",
-    price: "499.00",
-    strikedPrice: "1499.00",
-    soldBy: "Polestar Etail",
-    image:
-      "https://www.jiomart.com/images/product/600x750/rv1lnaemqh/majestic-man-men-white-pure-cotton-pack-of-1-kurta-product-images-rv1lnaemqh-0-202205291026.jpg",
-    size: "S",
-    color: "White",
-  },
-  {
-    id: 3,
-    title: "Majestic Man Men Black Pure Cotton Pack of 1 Kurta",
-    price: "499.00",
-    strikedPrice: "1499.00",
-    soldBy: "Koovs",
-    image:
-      "https://www.jiomart.com/images/product/original/rvqqrbzzsb/majestic-man-men-black-pure-cotton-pack-of-1-kurta-product-images-rvqqrbzzsb-0-202205291027.jpg",
-    size: "M",
-    color: "Black",
-  },
-  {
-    id: 4,
-    title: "Home One Star Blue Plastic Container 1+ 2+ 4 L (Set of 3)",
-    price: "99.00",
-    strikedPrice: "299.00",
-    soldBy: "Reliance Retail",
-    image:
-      "https://www.jiomart.com/images/product/600x600/491934147/home-one-star-blue-plastic-container-1-2-4-l-set-of-3-product-images-o491934147-p590041313-0-202207081851.jpg",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { getCartData } from "../Redux/CartReducer/action";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
-  const [total, setTotal] = useState(
-    data.reduce((acc, item) => acc + Number(item.price), 0).toFixed(2)
-  );
-
-  const [mrpTotal, setMRPTotal] = useState(
-    data.reduce((acc, item) => acc + Number(item.strikedPrice), 0)
-  );
-  const [totalDiscount, setTotalDiscount] = useState(
-    data.reduce((acc, item) => acc + Number(item.strikedPrice - item.price), 0)
-  );
-
+  const [inputCoupon, setInputCoupon] = useState("");
+  const [couponApplied, setCouponApplied] = useState(false);
+  const [coupDiscount, setCoupDiscount] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const toast = useToast();
   const [value, setValue] = useState(0);
+  const cartData = useSelector((store) => store.cartReducer.cartData);
+  console.log("CartData:", cartData);
+  const dispatch = useDispatch();
+  const [total, setTotal] = useState(
+    cartData?.reduce((acc, item) => acc + Number(item.price * item.count), 0)
+  );
+  const mrpTotal = cartData?.reduce(
+    (acc, item) => acc + Number(item.strikedPrice * item.count),
+    0
+  );
+  const totalDiscount = cartData?.reduce(
+    (acc, item) =>
+      acc + (Number(item.strikedPrice) - Number(item.price)) * item.count,
+    0
+  );
+
+  function couponToast() {
+    return toast({
+      title: `Coupon Applied`,
+      status: "success",
+      isClosable: true,
+      position: "top-right",
+    });
+  }
 
   const handleCouponChange = (coupon) => {
-    console.log(coupon, typeof mrpTotal);
-    if (coupon === "save250") {
-      setMRPTotal(mrpTotal - 250);
-    }
+    console.log(typeof coupon);
+    couponToast();
+    onClose();
+    setCouponApplied(true);
+    setCoupDiscount(Number(coupon));
+    setTotal(total - coupon);
   };
+
+  const handleCouponInput = () => {
+    couponToast();
+    console.log(inputCoupon);
+    setCouponApplied(true);
+    setInputCoupon("");
+    setCoupDiscount(Number(inputCoupon.match(/\d/g).join("")));
+    setTotal(total - Number(inputCoupon.match(/\d/g).join("")));
+  };
+
+  const handlePlaceOrder = () => {};
+
+  useEffect(() => {
+    dispatch(getCartData());
+    setTotal(
+      cartData?.reduce((acc, item) => acc + Number(item.price * item.count), 0)
+    );
+  }, []);
 
   return (
     <>
-      <Header />
-      <Navbar />
+      {/* <Header />
+      <Navbar /> */}
+      <Box w="full" h="5rem" bgColor="#008ECC" pl="10rem" py="1rem">
+        <Image src="https://www.jiomart.com/msassets/jiomart_logo_beta.svg" />
+      </Box>
       <Flex gap="2" w="80%" m="auto" my="10">
         <Container minW="60%" h="auto" bg="white">
           <Box fontSize="2xl" fontWeight="bold" align="left" mb="4">
-            My Cart({data.length})
+            My Cart({cartData?.length})
           </Box>
           <Container
             bgColor="white"
@@ -120,24 +119,15 @@ const CartPage = () => {
           >
             <HStack justify="space-between" my="4">
               <Box fontSize="md" fontWeight="semibold">
-                Basket ({data.length} Items)
+                Basket ({cartData?.length} Items)
               </Box>
               <Box fontSize="xl" fontWeight="semibold">
-                Rs.{total}
+                Rs.{(mrpTotal - totalDiscount).toFixed(2)}
               </Box>
             </HStack>
             <VStack divider={<StackDivider borderColor="grey" />}>
-              {data.map((item) => (
-                <ProductCard
-                  key={item.id}
-                  item={item}
-                  setTotal={setTotal}
-                  total={total}
-                  mrpTotal={mrpTotal}
-                  totalDiscount={totalDiscount}
-                  setMRPTotal={setMRPTotal}
-                  setTotalDiscount={setTotalDiscount}
-                />
+              {cartData?.map((item) => (
+                <ProductCard key={item.id} item={item} />
               ))}
             </VStack>
           </Container>
@@ -181,7 +171,7 @@ const CartPage = () => {
                     >
                       <Stack direction="column">
                         <Box>
-                          <Radio value="save250" colorScheme="green">
+                          <Radio value="250" colorScheme="green">
                             <Text fontWeight="semibold" color="black">
                               SAVE250
                             </Text>
@@ -192,7 +182,7 @@ const CartPage = () => {
                         </Box>
                         <Divider borderColor="grey" />
                         <Box>
-                          <Radio value="save1000" colorScheme="black">
+                          <Radio value="1000" colorScheme="black">
                             <Text fontWeight="semibold" color="black">
                               SAVE1000
                             </Text>
@@ -204,7 +194,7 @@ const CartPage = () => {
                         </Box>
                         <Divider borderColor="grey" />
                         <Box>
-                          <Radio value="premium200" colorScheme="red">
+                          <Radio value="200" colorScheme="red">
                             <Text fontWeight="semibold" color="black">
                               ITSPREMIUM200
                             </Text>
@@ -216,7 +206,7 @@ const CartPage = () => {
                         </Box>
                         <Divider borderColor="grey" />
                         <Box>
-                          <Radio value="premium100">
+                          <Radio value="100">
                             <Text fontWeight="semibold" color="black">
                               PREMIUMFRUITS100
                             </Text>
@@ -243,10 +233,19 @@ const CartPage = () => {
                   />
                 }
               />
-              <Input variant="flushed" placeholder="Enter Coupon Code" />
+              <Input
+                variant="flushed"
+                placeholder="Enter Coupon Code"
+                value={inputCoupon}
+                onChange={(e) => setInputCoupon(e.target.value)}
+              />
               <InputRightElement
                 children={
-                  <Text fontWeight="500" cursor="pointer">
+                  <Text
+                    fontWeight="500"
+                    cursor="pointer"
+                    onClick={handleCouponInput}
+                  >
                     Apply
                   </Text>
                 }
@@ -266,26 +265,41 @@ const CartPage = () => {
                 <Text>Product Discount</Text>
                 <Text>₹{totalDiscount.toFixed(2)}</Text>
               </Flex>
+
+              {couponApplied && (
+                <Flex justify="space-between" fontWeight="semibold">
+                  <Text>Coupon Discount</Text>
+                  <Text>₹{coupDiscount}</Text>
+                </Flex>
+              )}
+
               <Flex justify="space-between" fontWeight="bold">
                 <Text>Total Amount</Text>
-                <Text>₹{total}</Text>
+                <Text>
+                  ₹{(mrpTotal - totalDiscount - coupDiscount).toFixed(2)}
+                </Text>
               </Flex>
               <Box align="right" fontWeight="semibold" color="green">
-                <Text>You Save ₹{totalDiscount.toFixed(2)}</Text>
+                <Text>
+                  You Save ₹{(totalDiscount + coupDiscount).toFixed(2)}
+                </Text>
               </Box>
             </VStack>
           </Container>
           <Box align="right" my="3">
-            <Button w="55%" colorScheme="teal">
-              Place Order
-            </Button>
+            <Link
+              to="/order"
+              state={{
+                mrpTotal: mrpTotal,
+                totalDiscount: totalDiscount,
+                coupDiscount: coupDiscount,
+              }}
+            >
+              <Button w="55%" colorScheme="teal">
+                Place Order
+              </Button>
+            </Link>
           </Box>
-
-          {/* <Box>
-          <Text>MRP Total: {mrpTotal}</Text>
-          <Text>Total Discount: {totalDiscount}</Text>
-          <Text>Total Amount: {total}</Text>
-        </Box> */}
         </Container>
       </Flex>
     </>
