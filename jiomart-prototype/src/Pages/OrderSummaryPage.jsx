@@ -9,17 +9,28 @@ import {
   StackDivider,
   Text,
   Button,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  Input,
+  DrawerFooter,
+  Stack,
 } from "@chakra-ui/react";
 import CartOrderPayment from "../components/CartOrderPayment";
 import ProductCard from "../components/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as Link, useLocation } from "react-router-dom";
 import { getCartData } from "../Redux/CartReducer/action";
+import { useDisclosure } from "@chakra-ui/react";
 
 const OrderSummaryPage = () => {
   const cartData = useSelector((store) => store.cartReducer.cartData);
   const dispatch = useDispatch();
   const location = useLocation();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   console.log(location);
   const mrpTotal = cartData?.reduce(
     (acc, item) => acc + Number(item.strikedPrice * item.count),
@@ -45,6 +56,56 @@ const OrderSummaryPage = () => {
           <Box fontSize="2xl" fontWeight="bold" align="left" mb="4">
             Order Summary
           </Box>
+          <Container
+            bgColor="white"
+            h="max-content"
+            minW="100%"
+            borderRadius="4"
+            py="0.5"
+            my="3"
+          >
+            <Text fontSize="lg" fontWeight="500">
+              Select Delevery Address
+            </Text>
+            <Button w="40%" colorScheme="teal" my="3" onClick={onOpen}>
+              Add Address
+            </Button>
+            <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton />
+                <DrawerHeader>Add Address</DrawerHeader>
+
+                <DrawerBody>
+                  <Text fontSize="lg" fontWeight="500" mb="3">
+                    Address Details
+                  </Text>
+                  <Stack spacing={3}>
+                    <Input placeholder="Pin Code *" />
+                    <Input placeholder="Flat / House No." />
+                    <Input placeholder="Floor No." />
+                    <Input placeholder="Tower No." />
+                    <Input placeholder="Building / Apartment Name" />
+                    <Input placeholder="Address *" />
+                    <Input placeholder="Landmark / Area *" />
+                    <Input placeholder="City,State" />
+                    <Text fontSize="lg" fontWeight="500" mb="3">
+                      Delevery Contact Details
+                    </Text>
+                    <Input placeholder="Name *" />
+                    <Input placeholder="Mobile Number *" />
+                  </Stack>
+                </DrawerBody>
+
+                <DrawerFooter>
+                  <Button w="full" colorScheme="blue">
+                    Save Adderess
+                  </Button>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          </Container>
+
           <Container
             bgColor="white"
             h="max-content"
