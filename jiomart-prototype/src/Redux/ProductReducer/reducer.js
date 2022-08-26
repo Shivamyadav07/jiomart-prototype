@@ -2,7 +2,7 @@ import { GET_GROCERIES_FAILURE, GET_GROCERIES_REQUEST, GET_GROCERIES_SUCCESS } f
 
 const initialState = {
     isLoading: false,
-    products: [],
+    groceries: [],
     isError: false
 }
 
@@ -17,7 +17,7 @@ export const productreducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                products: action.payload
+                groceries: action.payload
             }
         case GET_GROCERIES_FAILURE:
             return {

@@ -13,7 +13,7 @@ import { useEffect } from 'react'
 import { getGroceriesData } from '../../Redux/ProductReducer/action'
 
 export const Groceries = () => {
-  const products=useSelector(state=>state.productreducer.products);
+  const groceries=useSelector(state=>state.productreducer.groceries);
   const dispatch=useDispatch();
 
   useEffect(()=>{
@@ -42,7 +42,7 @@ export const Groceries = () => {
 
       <div className={styles.maindiv} >
         <SideBarFilter />
-        <ProductPage data={products} />
+        <ProductPage data={groceries} />
       </div>
     </div>
   )
