@@ -16,8 +16,8 @@ export const SingleProductCard = ({item}) => {
                 <img className={styles.discountimg} src="https://i.ibb.co/Yd3ZVDg/badge.png" alt="badge" border="0" />
                 
             </div>
-        <img className={styles.productimage} src={item.image} alt='Productimage' />
-            <p className={styles.heading}>Jiomart Blue and White Polyester 2 Fold Umbrella 62.2 cm</p>
+        <img className={styles.productimage} src={item.image} alt='Productimage'/>
+            <p className={styles.heading}>{item.title}</p>
 
 
             <p className={styles.mrpdiv}>M.R.P:<> </></p>
