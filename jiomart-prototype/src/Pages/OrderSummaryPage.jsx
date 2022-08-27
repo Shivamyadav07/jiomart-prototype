@@ -20,6 +20,7 @@ import {
   Stack,
   RadioGroup,
   Radio,
+  Spinner,
 } from "@chakra-ui/react";
 import CartOrderPayment from "../components/CartOrderPayment";
 import ProductCard from "../components/ProductCard";
@@ -29,7 +30,7 @@ import { getCartData } from "../Redux/CartReducer/action";
 import { useDisclosure } from "@chakra-ui/react";
 
 const OrderSummaryPage = () => {
-  const [address, setAddress] = useState([]);
+  const [addresses, setAddresses] = useState([]);
   const [singleAddress, setSingleAddress] = useState({
     name: "",
     house: "",
@@ -44,6 +45,7 @@ const OrderSummaryPage = () => {
   });
   const [value, setValue] = useState({});
   const cartData = useSelector((store) => store.cartReducer.cartData);
+  const loading = useSelector((store) => store.cartReducer.isLoading);
   const dispatch = useDispatch();
   const location = useLocation();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,7 +62,7 @@ const OrderSummaryPage = () => {
 
   const handleAddAddress = () => {
     console.log(singleAddress);
-    setAddress([...address, singleAddress]);
+    setAddresses([...addresses, singleAddress]);
     onClose();
   };
 
@@ -72,6 +74,19 @@ const OrderSummaryPage = () => {
   useEffect(() => {
     dispatch(getCartData());
   }, []);
+
+  if (loading) {
+    return (
+      <Spinner
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="blue.500"
+        size="xl"
+        m="50vw"
+      />
+    );
+  }
 
   return (
     <>
@@ -94,10 +109,10 @@ const OrderSummaryPage = () => {
             <Text fontSize="lg" fontWeight="500">
               Select Delevery Address
             </Text>
-            {address.length !== 0 && (
+            {addresses.length !== 0 && (
               <RadioGroup onChange={handleSelectAddress} value={value}>
                 <Stack direction="column">
-                  {address.map((add) => (
+                  {addresses.map((add) => (
                     <Box key={add.name} my="4" bgColor="#f5f5f5" p="4" w="md">
                       <Radio value={add.name}>
                         <Text fontSize="lg" fontWeight="bold" pl="2">

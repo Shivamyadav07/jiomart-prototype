@@ -107,7 +107,16 @@ const CartPage = () => {
         emptyColor="gray.200"
         color="blue.500"
         size="xl"
+        m="50vw"
       />
+    );
+  }
+
+  if (cartData.length === 0) {
+    return (
+      <Text>
+        Your Cart is Empty. <Link to="/">Return to Shopping.</Link>
+      </Text>
     );
   }
 

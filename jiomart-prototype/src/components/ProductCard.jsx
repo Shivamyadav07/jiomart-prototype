@@ -3,18 +3,23 @@ import React, { useState } from "react";
 import { Flex, Box, Image, Text, IconButton } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
-import { updateCartData } from "../Redux/CartReducer/action";
+import { deleteCartData, updateCartData } from "../Redux/CartReducer/action";
 import { useLocation } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(item.count);
   const location = useLocation();
+
   const handleDecrease = (product) => {
-    setCount(() => count - 1);
-    console.log("product", product);
-    const payload = { count: product.count - 1 };
-    dispatch(updateCartData(product.id, payload));
+    console.log("count:", count, typeof count, product);
+    if (count !== 1) {
+      setCount(() => count - 1);
+      console.log("product", product);
+      const payload = { count: product.count - 1 };
+      dispatch(updateCartData(product.id, payload));
+    }
+    dispatch(deleteCartData(product));
   };
 
   const handleIncrease = (product) => {
@@ -39,13 +44,10 @@ const ProductCard = ({ item }) => {
             {`₹ ${(item.price * item.count).toFixed(2)}`}
           </Text>
           <Text as="s" mx="2">
-            {`₹ ${(item.strikedPrice * item.count).toFixed(2)}`}
+            {`₹ ${(item.mrp * item.count).toFixed(2)}`}
           </Text>
           <Text color="green" fontWeight="semibold">
-            {`You Save ₹ ${(
-              (item.strikedPrice - item.price) *
-              item.count
-            ).toFixed(2)}`}
+            {`You Save ₹ ${((item.mrp - item.price) * item.count).toFixed(2)}`}
           </Text>
         </Flex>
         {item.size && (
@@ -55,12 +57,15 @@ const ProductCard = ({ item }) => {
             <Text>Color: {item.color}</Text>
           </Flex>
         )}
-        <Flex my="3" align="center">
-          <Text fontSize="sm">Sold By</Text>
-          <Text color="green" ml="2" fontWeight="semibold">
-            {item.soldBy}
-          </Text>
-        </Flex>
+        {item.soldBy && (
+          <Flex my="3" align="center">
+            <Text fontSize="sm">Sold By</Text>
+            <Text color="green" ml="2" fontWeight="semibold">
+              {item.soldBy}
+            </Text>
+          </Flex>
+        )}
+
         {location.pathname === "/cart" && (
           <Flex justify="space-between">
             <Text cursor="pointer">SAVE FOR LATER</Text>
@@ -71,7 +76,7 @@ const ProductCard = ({ item }) => {
                 size="md"
                 borderRadius="50%"
                 icon={<MinusIcon />}
-                disabled={item.count === 1}
+                // disabled={item.count === 1}
                 onClick={() => handleDecrease(item)}
               />
               <Text px="4">{count}</Text>
