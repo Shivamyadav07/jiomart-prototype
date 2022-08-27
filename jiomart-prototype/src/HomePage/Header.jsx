@@ -2,9 +2,8 @@ import React from 'react'
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
-import GroceriesData from "../HomePage/Search/data.json";
+// import GroceriesData from "../HomePage/Search/data.json";
 
-// import SearchBar from './SearchBar';
 import styles from "../HomePage/HomePageCss/Header.module.css";
 import SideBar from './Sidebar';
 
@@ -24,7 +23,7 @@ const Header = () => {
 
         <div className={styles.seesaw}>
             <input className={styles.searchItem}
-              placeholder="Search essential, groceries, and more..." data={GroceriesData} />
+              placeholder="Search essential, groceries, and more..." />
         </div>
 
         <Link to="/">
