@@ -9,6 +9,8 @@ import { SingleProductCard } from '../ProducPage/ProductPageJsx/SingleProductCar
 import {useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addCartData } from '../../Redux/CartReducer/action'
 
 export const DescriptionPage = () => {
   const [data,setData]=useState({})
@@ -63,6 +65,13 @@ export const DescriptionPage = () => {
     console.log(data)
   },[])
 
+  const dispatch = useDispatch();
+  const handleAddCartData = (item) => {
+      console.log("Item-to-Cart:", item);
+      const payload = { ...item, count: 1 }
+      dispatch(addCartData(payload))
+  };
+
   return (
     <div className={styles.maindiv}>
       <div className={styles.toplink}>
@@ -114,7 +123,7 @@ export const DescriptionPage = () => {
           <p className={styles.des9}>Inaugural Offer</p>
           <p className={styles.des10}>Free Shipping</p>
           <img style={{ "height": "35px", "width": "220px" }} src='https://i.ibb.co/526QBqs/image.png' alt='PaytmImage' />
-          <button className={styles.addtocart}>
+          <button className={styles.addtocart} onClick={() => handleAddCartData(data)} >
             Add to cart
             <img className={styles.icon} src="https://i.ibb.co/QHDtjF4/plus.png" alt="plus" border="0" />
           </button>
