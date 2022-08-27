@@ -26,7 +26,7 @@ const Header = () => {
               placeholder="Search essential, groceries, and more..." />
         </div>
 
-        <Link to="/">
+        <Link to="/signup">
         <div className={styles.navicon}>
             <PersonIcon style={{fontSize:"1.9rem", marginLeft:"0.5rem"}}/>
             <div className={styles.navText}>
@@ -35,7 +35,7 @@ const Header = () => {
         </div>
         </Link>
 
-        <Link to="/">
+        <Link to="/cart">
         <div className={styles.navicon}>
             <ShoppingCartIcon style={{marginLeft:"1rem"}}/>
             <div className={styles.navText}>Cart</div>
