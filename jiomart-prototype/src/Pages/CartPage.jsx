@@ -38,6 +38,8 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartData } from "../Redux/CartReducer/action";
 import { Link } from "react-router-dom";
+import Navbar from "../HomePage/Navbar";
+import Header from "../HomePage/Header";
 
 const CartPage = () => {
   const [inputCoupon, setInputCoupon] = useState("");
@@ -53,13 +55,14 @@ const CartPage = () => {
   const [total, setTotal] = useState(
     cartData?.reduce((acc, item) => acc + Number(item.price * item.count), 0)
   );
+  console.log(typeof(total),"total",total)
   const mrpTotal = cartData?.reduce(
-    (acc, item) => acc + Number(item.strikedPrice * item.count),
+    (acc, item) => acc + Number(item.mrp * item.count),
     0
   );
   const totalDiscount = cartData?.reduce(
     (acc, item) =>
-      acc + (Number(item.strikedPrice) - Number(item.price)) * item.count,
+      acc + (Number(item.mrp) - Number(item.price)) * item.count,
     0
   );
 
@@ -121,12 +124,9 @@ const CartPage = () => {
   }
 
   return (
-    <>
-      {/* <Header />
-      <Navbar /> */}
-      <Box w="full" h="5rem" bgColor="#008ECC" pl="10rem" py="1rem">
-        <Image src="https://www.jiomart.com/msassets/jiomart_logo_beta.svg" />
-      </Box>
+    <div style={{"paddingTop":"80px"}}>
+      <Navbar/>
+      <Header/>
       <Flex gap="2" w="80%" m="auto" my="10">
         <Container minW="60%" h="auto" bg="white">
           <Box fontSize="2xl" fontWeight="bold" align="left" mb="4">
@@ -325,7 +325,7 @@ const CartPage = () => {
           </Box>
         </Container>
       </Flex>
-    </>
+    </div>
   );
 };
 
