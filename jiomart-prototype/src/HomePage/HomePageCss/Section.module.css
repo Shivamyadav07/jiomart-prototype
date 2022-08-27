@@ -1,0 +1,122 @@
+.belowSlider{
+    width:84.2rem;
+    height:40rem;
+    /* border: 1px solid black; */
+
+  }
+.imgie{
+  width:84.5rem;
+}
+
+.vicks{
+  /* border: 1px solid red; */
+  height:10rem;
+  width:84.2rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.imgvick{
+  width:84.5rem;
+  height:10rem;
+}
+
+
+.groceries{
+  height:40rem;
+  width:100%;
+}
+.groceriesD{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border:1px solid green;
+ 
+}
+
+
+
+
+
+.hotest{
+  height:40rem;
+  width:100%;
+}
+.hotestD{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  margin-left: 2rem;
+}
+
+.kidssmall{
+  height:20rem;
+  width:100%;
+  margin: auto;
+  margin-bottom: 5rem;
+  }
+  .kidsfashion{
+    display: flex;
+    margin: auto;
+    margin-left: 2rem;
+    border-radius: 0.5rem;
+  }
+  .kids{
+    width: 30rem;
+  }
+
+
+.menimg{
+  height:30rem;
+  width:100%;
+  margin: auto;
+  }
+
+  .menf{
+    display:grid;
+    grid-template-columns: 46% 46%;
+    grid-gap:2rem;
+        margin: auto;
+        margin-left: 3rem;
+  }
+  
+  .text{
+    color:black;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-left: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+
+.menssmall{
+height:20rem;
+width:100%;
+margin: auto;
+margin-bottom: 5rem;
+}
+.mensfashion{
+  display: flex;
+  margin: auto;
+  margin-left: 2rem;
+  border-radius: 0.5rem;
+}
+.fashion{
+  width: 30rem;
+}
+.mmm{
+  width: 100%;
+}
+
+.posterimg{
+height:72rem;
+width:100%;
+margin: auto;
+}
+
+.abovefooter{
+  display:grid;
+  grid-template-columns: 50% 50%;
+  margin-left: 1rem;
+}
+.poster{
+  margin: 1rem ;
+}

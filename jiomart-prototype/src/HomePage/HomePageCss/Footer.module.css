@@ -1,0 +1,37 @@
+   .footersection{
+    background-color:#f3f3f3;
+    height:32rem;
+    width:84.2rem;
+    /* border: 1px solid rgb(165, 20, 117); */
+    margin-top: 300rem;
+   
+    }
+
+    .footerbox{
+        /* height: 23rem; */
+        width:100%;
+        background-color: #f3f3f3;
+        padding: 3rem 0 1.5rem 0;
+    }
+    
+    .footrow {
+        display: flex;
+        line-height:1rem;
+ 
+    }
+    
+    .foot{
+        display:flex;
+        width:52rem;
+    }
+    
+    .footcol {
+        width: 18rem;
+        margin-left:7rem;
+       
+    }
+    
+    .footerright {
+        width: 22rem;
+    }
+    
