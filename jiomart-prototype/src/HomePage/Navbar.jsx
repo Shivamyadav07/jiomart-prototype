@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
 
         <div className={styles.dropdown}>
-          <Link to="/" className={styles.dropbtn}>Groceries </Link>
+          <Link to="/groceries" className={styles.dropbtn}>Groceries </Link>
           <Link to="/" className={styles.downkey}><ChevronDownIcon/></Link>
           <div className={styles.dropdownContent}>
             <div className={styles.flexContent}>
@@ -48,7 +48,7 @@ const Navbar = () => {
 
 
         <div className={styles.dropdown}>
-          <Link to="/" className={styles.dropbtn}>Premium Fruits</Link>
+          <Link to="/premiumfruits" className={styles.dropbtn}>Premium Fruits</Link>
           <Link to="/" className={styles.downkey}><ChevronDownIcon/></Link>
           <div className={styles.dropdownContent}>
             <div className={styles.flexContent}>
@@ -76,7 +76,7 @@ const Navbar = () => {
       
         
         <div className={styles.dropdown}>
-          <Link to="/" className={styles.dropbtn}>Home & Kitchen</Link>
+          <Link to="/homeKitchen" className={styles.dropbtn}>Home & Kitchen</Link>
           <Link to="/" className={styles.downkey}><ChevronDownIcon/></Link>
           <div className={styles.dropdownContent}>
             <div className={styles.flexContent}>
@@ -116,7 +116,7 @@ const Navbar = () => {
         </div>
 
         <div className={styles.dropdown}>
-          <Link to="/" className={styles.dropbtn}>Fashion</Link>
+          <Link to="/fashion" className={styles.dropbtn}>Fashion</Link>
           <Link to="/" className={styles.downkey}><ChevronDownIcon/></Link>
           <div className={styles.dropdownContent}>
             <div className={styles.flexContent}>
@@ -135,7 +135,7 @@ const Navbar = () => {
 
 
         <div className={styles.dropdown}>
-          <Link to="/" className={styles.dropbtn}>Electronics</Link>
+          <Link to="/electronics" className={styles.dropbtn}>Electronics</Link>
           <Link to="/" className={styles.downkey}><ChevronDownIcon/></Link>
           <div className={styles.dropdownContent}>
             <div className={styles.flexContent}>
@@ -161,7 +161,7 @@ const Navbar = () => {
 
 
         <div className={styles.dropdown}>
-          <Link to="/" className={styles.dropbtn}>Beauty</Link>
+          <Link to="/beauty" className={styles.dropbtn}>Beauty</Link>
           <Link to="/" className={styles.downkey}><ChevronDownIcon/></Link>
           <div className={styles.dropdownContent}>
             <div className={styles.flexContent}>
@@ -185,7 +185,7 @@ const Navbar = () => {
         </div>
 
         <div className={styles.dropdown}>
-          <Link to="/" className={styles.dropbtn}>Jewellery</Link>
+          <Link to="/jewellery" className={styles.dropbtn}>Jewellery</Link>
           <Link to="/" className={styles.downkey}><ChevronDownIcon/></Link>
           <div className={styles.dropdownContent}>
             <div className={styles.flexContent}>

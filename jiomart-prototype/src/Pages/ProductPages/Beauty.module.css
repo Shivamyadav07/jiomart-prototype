@@ -1,5 +1,7 @@
 .home{
     background-color: rgb(243, 243, 243);
+    max-width: 1191px;
+    margin: auto;
 
 }
 .maindiv {

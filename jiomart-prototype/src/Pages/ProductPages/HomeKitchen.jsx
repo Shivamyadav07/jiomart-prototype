@@ -22,33 +22,35 @@ export const HomeKitchen = () => {
 
 
     return (
-        <div className={styles.home}>
-            <div className={styles.toplink}>
-                <Breadcrumb
-                    spacing='8px' separator=">">
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='#'>Home</BreadcrumbLink>
-                    </BreadcrumbItem>
+        <div style={{ "backgroundColor": "rgb(243, 243, 243)" }}>
+            <div className={styles.home}>
+                <div className={styles.toplink}>
+                    <Breadcrumb
+                        spacing='8px' separator=">">
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href='#'>Home</BreadcrumbLink>
+                        </BreadcrumbItem>
 
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='#'>AllCategory</BreadcrumbLink>
-                    </BreadcrumbItem>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href='#'>AllCategory</BreadcrumbLink>
+                        </BreadcrumbItem>
 
-                    <BreadcrumbItem isCurrentPage>
-                        <BreadcrumbLink href='#'>Groceries</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem isCurrentPage>
-                        <BreadcrumbLink href='#'>Home & Kitchen</BreadcrumbLink>
-                    </BreadcrumbItem>
-                </Breadcrumb>
-            </div>
+                        <BreadcrumbItem isCurrentPage>
+                            <BreadcrumbLink href='#'>Groceries</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbItem isCurrentPage>
+                            <BreadcrumbLink href='#'>Home & Kitchen</BreadcrumbLink>
+                        </BreadcrumbItem>
+                    </Breadcrumb>
+                </div>
 
-            <div className={styles.maindiv} >
-                <SideBarFilter />
-                <ProductPage
-                    poster='https://www.jiomart.com/images/category/1687/home-kitchen-20220519.jpeg'
-                    data={homeKitchen}
-                />
+                <div className={styles.maindiv} >
+                    <SideBarFilter />
+                    <ProductPage
+                        poster='https://www.jiomart.com/images/category/1687/home-kitchen-20220519.jpeg'
+                        data={homeKitchen}
+                    />
+                </div>
             </div>
         </div>
     )
