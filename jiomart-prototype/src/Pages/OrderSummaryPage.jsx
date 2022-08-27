@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Image,
@@ -18,20 +18,38 @@ import {
   Input,
   DrawerFooter,
   Stack,
+  RadioGroup,
+  Radio,
+  Spinner,
 } from "@chakra-ui/react";
 import CartOrderPayment from "../components/CartOrderPayment";
 import ProductCard from "../components/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
-import { Link as Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { getCartData } from "../Redux/CartReducer/action";
 import { useDisclosure } from "@chakra-ui/react";
 
 const OrderSummaryPage = () => {
+  const [addresses, setAddresses] = useState([]);
+  const [singleAddress, setSingleAddress] = useState({
+    name: "",
+    house: "",
+    floor: "",
+    tower: "",
+    building: "",
+    address: "",
+    landmark: "",
+    pin: "",
+    city: "",
+    mobile: "",
+  });
+  const [value, setValue] = useState({});
   const cartData = useSelector((store) => store.cartReducer.cartData);
+  const loading = useSelector((store) => store.cartReducer.isLoading);
   const dispatch = useDispatch();
   const location = useLocation();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log(location);
+  // console.log(location);
   const mrpTotal = cartData?.reduce(
     (acc, item) => acc + Number(item.strikedPrice * item.count),
     0
@@ -42,9 +60,33 @@ const OrderSummaryPage = () => {
     0
   );
 
+  const handleAddAddress = () => {
+    console.log(singleAddress);
+    setAddresses([...addresses, singleAddress]);
+    onClose();
+  };
+
+  const handleSelectAddress = (e) => {
+    // setValue();
+    console.log("SA:", e);
+  };
+
   useEffect(() => {
     dispatch(getCartData());
   }, []);
+
+  if (loading) {
+    return (
+      <Spinner
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="blue.500"
+        size="xl"
+        m="50vw"
+      />
+    );
+  }
 
   return (
     <>
@@ -67,6 +109,33 @@ const OrderSummaryPage = () => {
             <Text fontSize="lg" fontWeight="500">
               Select Delevery Address
             </Text>
+            {addresses.length !== 0 && (
+              <RadioGroup onChange={handleSelectAddress} value={value}>
+                <Stack direction="column">
+                  {addresses.map((add) => (
+                    <Box key={add.name} my="4" bgColor="#f5f5f5" p="4" w="md">
+                      <Radio value={add.name}>
+                        <Text fontSize="lg" fontWeight="bold" pl="2">
+                          {add.name}
+                        </Text>
+                      </Radio>
+                      <Box pl="8" fontWeight="semibold">
+                        <Text>{add.building},</Text>
+                        <Text>{add.floor},</Text>
+                        <Text>{add.tower},</Text>
+                        <Text>{add.address},</Text>
+                        <Text>{add.city},</Text>
+                        <Text>{add.landmark},</Text>
+                        <Text>
+                          {add.city} - {add.pin},
+                        </Text>
+                        <Text>+91 - {add.mobile}</Text>
+                      </Box>
+                    </Box>
+                  ))}
+                </Stack>
+              </RadioGroup>
+            )}
             <Button w="40%" colorScheme="teal" my="3" onClick={onOpen}>
               Add Address
             </Button>
@@ -81,24 +150,118 @@ const OrderSummaryPage = () => {
                     Address Details
                   </Text>
                   <Stack spacing={3}>
-                    <Input placeholder="Pin Code *" />
-                    <Input placeholder="Flat / House No." />
-                    <Input placeholder="Floor No." />
-                    <Input placeholder="Tower No." />
-                    <Input placeholder="Building / Apartment Name" />
-                    <Input placeholder="Address *" />
-                    <Input placeholder="Landmark / Area *" />
-                    <Input placeholder="City,State" />
+                    <Input
+                      type="number"
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          pin: e.target.value,
+                        })
+                      }
+                      placeholder="Pin Code *"
+                    />
+                    <Input
+                      type="number"
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          house: e.target.value,
+                        })
+                      }
+                      placeholder="Flat / House No."
+                    />
+                    <Input
+                      type="number"
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          floor: e.target.value,
+                        })
+                      }
+                      placeholder="Floor No."
+                    />
+                    <Input
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          tower: e.target.value,
+                        })
+                      }
+                      placeholder="Tower No."
+                      type="number"
+                    />
+                    <Input
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          building: e.target.value,
+                        })
+                      }
+                      placeholder="Building / Apartment Name"
+                      type="text"
+                    />
+                    <Input
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          address: e.target.value,
+                        })
+                      }
+                      placeholder="Address *"
+                      type="text"
+                    />
+                    <Input
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          landmark: e.target.value,
+                        })
+                      }
+                      placeholder="Landmark / Area *"
+                      type="text"
+                    />
+                    <Input
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          city: e.target.value,
+                        })
+                      }
+                      placeholder="City,State"
+                      type="text"
+                    />
                     <Text fontSize="lg" fontWeight="500" mb="3">
                       Delevery Contact Details
                     </Text>
-                    <Input placeholder="Name *" />
-                    <Input placeholder="Mobile Number *" />
+                    <Input
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          name: e.target.value,
+                        })
+                      }
+                      placeholder="Name *"
+                      type="text"
+                    />
+                    <Input
+                      onChange={(e) =>
+                        setSingleAddress({
+                          ...singleAddress,
+                          mobile: e.target.value,
+                        })
+                      }
+                      placeholder="Mobile Number *"
+                      type="tel"
+                    />
                   </Stack>
                 </DrawerBody>
 
                 <DrawerFooter>
-                  <Button w="full" colorScheme="blue">
+                  <Button
+                    w="full"
+                    colorScheme="blue"
+                    onClick={handleAddAddress}
+                  >
                     Save Adderess
                   </Button>
                 </DrawerFooter>
@@ -174,18 +337,7 @@ const OrderSummaryPage = () => {
             </VStack>
           </Container>
           <Box align="right" my="3">
-            <Link
-              as={Link}
-              //   to={{
-              //     pathname: "/order",
-              //     state: {
-              //       mrpTotal: mrpTotal,
-              //       totalDiscount: totalDiscount,
-              //       coupDiscount: coupDiscount,
-              //     },
-              //   }}
-              to={{ pathname: "/payment" }}
-            >
+            <Link to={{ pathname: "/payment" }}>
               <Button w="55%" colorScheme="teal">
                 Make Payment
               </Button>

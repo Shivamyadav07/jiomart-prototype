@@ -3,6 +3,9 @@ import { Box } from '@chakra-ui/react'
 import styles from '../ProductPageModuleCss/SingleProductCard.module.css'
 
 export const SingleProductCard = ({item}) => {
+    const handleAddCartData = (item) => {
+      console.log("Item-to-Cart:", item);
+    };
     return (
         <Box className={styles.container}
             bg="white"
@@ -25,7 +28,7 @@ export const SingleProductCard = ({item}) => {
             <> </>
             <p className={styles.price}>₹ {item.price}</p>
 
-            <button className={styles.addtocart}>
+            <button className={styles.addtocart} onClick={() => handleAddCartData(item)}>
                 Add to cart
                 <img className={styles.icon} src="https://i.ibb.co/QHDtjF4/plus.png" alt="plus" border="0" />
             </button>
