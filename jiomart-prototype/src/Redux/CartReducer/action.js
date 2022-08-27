@@ -22,20 +22,9 @@ export const addCartData = (payload) => (dispatch) => {
       console.log("AddRes:", res);
       return dispatch({ type: types.ADD_CARTDATA_SUCCESS, payload: res.data });
     })
+    .then(() => getCartData())
     .catch((err) => {
       return dispatch({ type: types.ADD_CARTDATA_FAILURE });
-    });
-};
-
-const updateData = (payload) => (dispatch) => {
-  return axios
-    .patch("https://cartdata-json.herokuapp.com/cart", payload)
-    .then((res) => {
-      console.log("InnerRes:", res);
-      return dispatch({
-        type: types.UPDATE_CARTDATA_SUCCESS,
-        payload: res.data,
-      });
     });
 };
 
@@ -53,6 +42,7 @@ export const updateCartData = (id, payload) => (dispatch) => {
         });
       });
     })
+    .then(() => getCartData())
     .catch((err) => {
       return dispatch({ type: types.UPDATE_CARTDATA_FAILURE });
     });
