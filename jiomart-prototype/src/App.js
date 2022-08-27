@@ -1,5 +1,4 @@
 import './App.css';
-// import SearchDisplay from './HomePage/Search/SearchDisplay';
 import MainRoutes from './Pages/MainRoutes';
 
 
@@ -8,7 +7,6 @@ function App() {
     <div >
       <MainRoutes/>
       
-     {/* <SearchDisplay/> */}
      
     </div>
   );
