@@ -12,7 +12,7 @@ export const MultipleProductsSection = ({data}) => {
       <div className={styles.productdiv}>
         {
           data.map((e)=>{
-            return <SingleProductCard item={e} />
+            return <SingleProductCard key={e.id} item={e} />
           })
         }
       </div>

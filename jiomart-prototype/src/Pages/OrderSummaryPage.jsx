@@ -28,6 +28,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { getCartData } from "../Redux/CartReducer/action";
 import { useDisclosure } from "@chakra-ui/react";
+import Header from "../HomePage/Header";
+import Navbar from "../HomePage/Navbar";
 
 const OrderSummaryPage = () => {
   const [addresses, setAddresses] = useState([]);
@@ -51,12 +53,12 @@ const OrderSummaryPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   // console.log(location);
   const mrpTotal = cartData?.reduce(
-    (acc, item) => acc + Number(item.strikedPrice * item.count),
+    (acc, item) => acc + Number(item.mrp * item.count),
     0
   );
   const totalDiscount = cartData?.reduce(
     (acc, item) =>
-      acc + (Number(item.strikedPrice) - Number(item.price)) * item.count,
+      acc + (Number(item.mrp) - Number(item.price)) * item.count,
     0
   );
 
@@ -89,10 +91,9 @@ const OrderSummaryPage = () => {
   }
 
   return (
-    <>
-      <Box w="full" h="5rem" bgColor="#008ECC" pl="10rem" py="1rem">
-        <Image src="https://www.jiomart.com/msassets/jiomart_logo_beta.svg" />
-      </Box>
+    <div style={{"paddingTop":"80px"}}>
+    <Navbar/>  
+    <Header/>
       <Flex gap="2" w="80%" m="auto" my="10">
         <Container minW="60%" h="auto" bg="white">
           <Box fontSize="2xl" fontWeight="bold" align="left" mb="4">
@@ -345,7 +346,7 @@ const OrderSummaryPage = () => {
           </Box>
         </Container>
       </Flex>
-    </>
+    </div>
   );
 };
 
