@@ -29,11 +29,24 @@ export const cartReducer = (state = initState, action) => {
         isError: true,
       };
     case types.ADD_CARTDATA_REQUEST:
-      return {};
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
     case types.ADD_CARTDATA_SUCCESS:
-      return {};
+      return {
+        ...state,
+        cartData: [...state.cartData, payload],
+        isLoading: false,
+        isError: false,
+      };
     case types.ADD_CARTDATA_FAILURE:
-      return {};
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
     case types.UPDATE_CARTDATA_REQUEST:
       return {
         ...state,
@@ -48,6 +61,28 @@ export const cartReducer = (state = initState, action) => {
         isError: false,
       };
     case types.UPDATE_CARTDATA_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
+
+    case types.DELETE_CARTDATA_REQUEST:
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+      };
+
+    case types.DELETE_CARTDATA_SUCCESS:
+      return {
+        ...state,
+        cartData: payload,
+        isLoading: false,
+        isError: false,
+      };
+
+    case types.DELETE_CARTDATA_FAILURE:
       return {
         ...state,
         isLoading: false,

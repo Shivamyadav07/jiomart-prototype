@@ -30,6 +30,7 @@ import {
   Stack,
   Radio,
   useToast,
+  Spinner,
 } from "@chakra-ui/react";
 import ProductCard from "../components/ProductCard";
 import CartOrderPayment from "../components/CartOrderPayment";
@@ -46,6 +47,7 @@ const CartPage = () => {
   const toast = useToast();
   const [value, setValue] = useState(0);
   const cartData = useSelector((store) => store.cartReducer.cartData);
+  const loading = useSelector((store) => store.cartReducer.isLoading);
   console.log("CartData:", cartData);
   const dispatch = useDispatch();
   const [total, setTotal] = useState(
@@ -96,6 +98,27 @@ const CartPage = () => {
       cartData?.reduce((acc, item) => acc + Number(item.price * item.count), 0)
     );
   }, []);
+
+  if (loading) {
+    return (
+      <Spinner
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="blue.500"
+        size="xl"
+        m="50vw"
+      />
+    );
+  }
+
+  if (cartData.length === 0) {
+    return (
+      <Text>
+        Your Cart is Empty. <Link to="/">Return to Shopping.</Link>
+      </Text>
+    );
+  }
 
   return (
     <>
