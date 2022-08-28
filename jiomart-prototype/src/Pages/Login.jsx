@@ -13,7 +13,9 @@ import React, { useEffect, useState } from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io"
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
+import Footer from "../HomePage/Footer";
 import Header from "../HomePage/Header";
+import Navbar from "../HomePage/Navbar";
 import { getauth } from "../Redux/AuthReducer/action";
 import { saveLocalData } from "../utilis/localStorage";
 import styles from "./Login.module.css";
@@ -74,6 +76,7 @@ const Login = () => {
    <Box>
    <Box >
      <Header />
+     <Navbar/>
    </Box>
     <Box m="200px"  >
      
@@ -128,6 +131,7 @@ const Login = () => {
         </Text>
       </Box>
     </Box>
+    <Footer />
     </Box>
   );
 };

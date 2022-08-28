@@ -30,6 +30,7 @@ import { getCartData } from "../Redux/CartReducer/action";
 import { useDisclosure } from "@chakra-ui/react";
 import Header from "../HomePage/Header";
 import Navbar from "../HomePage/Navbar";
+import Footer from "../HomePage/Footer";
 
 const OrderSummaryPage = () => {
   const [addresses, setAddresses] = useState([]);
@@ -346,6 +347,7 @@ const OrderSummaryPage = () => {
           </Box>
         </Container>
       </Flex>
+      <Footer />
     </div>
   );
 };
