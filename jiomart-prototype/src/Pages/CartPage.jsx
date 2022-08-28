@@ -40,6 +40,7 @@ import { getCartData } from "../Redux/CartReducer/action";
 import { Link } from "react-router-dom";
 import Navbar from "../HomePage/Navbar";
 import Header from "../HomePage/Header";
+import Footer from "../HomePage/Footer";
 
 const CartPage = () => {
   const [inputCoupon, setInputCoupon] = useState("");
@@ -325,6 +326,7 @@ const CartPage = () => {
           </Box>
         </Container>
       </Flex>
+      <Footer />
     </div>
   );
 };

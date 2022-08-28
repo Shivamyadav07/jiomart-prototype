@@ -18,6 +18,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getLocalData } from "../utilis/localStorage";
 import { useNavigate } from "react-router-dom";
 import Header from "../HomePage/Header";
+import Navbar from "../HomePage/Navbar";
+import Footer from "../HomePage/Footer";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -58,6 +60,7 @@ const Signup = () => {
     <Box>
     <Box >
     <Header />
+    <Navbar/>
   </Box>
     <Box m="200px">
       <Flex  gap="150px">
@@ -154,6 +157,7 @@ const Signup = () => {
         </Text>
       </Box>
     </Box>
+    <Footer />
     </Box>
   );
 };
