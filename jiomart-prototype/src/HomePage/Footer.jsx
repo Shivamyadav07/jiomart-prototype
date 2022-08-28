@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from "../HomePage/HomePageCss/Footer.module.css";
 import {
     Text,
@@ -80,7 +81,8 @@ const Footer = () => {
                     </div>
                 </div>
                </div>
-
+             
+             <div className={styles.horz}></div>
             <div className={styles.bottom}>
                 <div className={styles.last}>
                 <Stack direction='row' spacing='28rem' marginLeft='3rem' marginBottom='3'>

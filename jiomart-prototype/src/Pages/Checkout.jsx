@@ -4,7 +4,8 @@ import { Radio, Spin, Alert } from 'antd';
 import './Checkout.css';
 import CartPage from './CartPage';
 import { useHistory } from 'react-router';
-import { updateCart } from '../../Redux/Products/actions';
+import { updateCart } from '../../Redux/action';
+
 const Checkout = ({ match, location, history }) => {
   const isAuth = useSelector((store) => store.Auth.isAuth);
   const dispatch = useDispatch();
@@ -138,7 +139,8 @@ const Checkout = ({ match, location, history }) => {
             </div>
           )}
 
-          <CartPage cartDetails={cartDetails} />
+
+         <CartPage cartDetails={cartDetails} />
         </div>
       )}
       <div className='pay-details'>

@@ -8,7 +8,8 @@
     height:4.4rem; 
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 5;
+    /* border:1px solid red; */
 }
 .navbar {
     display: grid;
@@ -18,6 +19,7 @@
     color: white;
     height:4.4rem;
     background-color: #008ecc;
+    /* border:1px solid rgb(38, 36, 161); */
 
 }
 .menu{
@@ -26,31 +28,39 @@
     height:3rem;
     font-size: 2rem;
     cursor: pointer;
+    /* border:1px solid rgb(161, 92, 14); */
+
 }
 
 .nameLogo {
     height:3rem;
+    /* border:1px solid rgb(138, 172, 18); */
+
 }
 
 .jio{
     font-weight:700;
     height:1.8rem;
     font-size:1.6rem;
+    /* border:1px solid rgb(4, 119, 33); */
+
 }
 
 .beta{
     font-size:0.7rem;
     margin-left:4rem;
     font-weight:600;
+    /* border:1px solid rgb(14, 118, 145); */
+
 }
 
-.searchItem {   
-    outline-style: none;
-}
+
 
 .navicon {
   display:flex;
     cursor: pointer;
+    /* border:1px solid rgb(59, 59, 61); */
+
 }
 
  .navText {
@@ -63,15 +73,12 @@
 
 .signU{
     margin-top:0.3rem;
+    /* border:1px solid rgb(72, 9, 124); */
+    position: fixed;
+  bottom: 0;
+  right: 0; 
 }
 
-.searchItem {
-    width: 50rem;
-    height: 2.3rem;
-    border-radius: 0.3rem;
-    border: none;
-    padding-left: 1rem;
-}
 
 
 
