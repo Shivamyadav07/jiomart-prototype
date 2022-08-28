@@ -11,14 +11,28 @@ import {
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
 import { getGroceriesData } from '../../Redux/ProductReducer/action'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
 export const Groceries = () => {
   const groceries = useSelector(state => state.productreducer.groceries);
   const dispatch = useDispatch();
+  const [searchParams]=useSearchParams();
+  const location=useLocation();
 
   useEffect(() => {
-    dispatch(getGroceriesData());
-  }, [])
+    if(location||groceries.length===0){
+      const sortBy=searchParams.get("sortBy");
+      const orderBy=searchParams.get("orderBy");
+      const queryParams={
+        params:{
+          _sort: sortBy,
+          _order: orderBy
+        }
+      }
+      dispatch(getGroceriesData(queryParams));
+    }
+    
+  }, [location.search])
 
 
   return (

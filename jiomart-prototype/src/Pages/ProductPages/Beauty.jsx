@@ -11,14 +11,30 @@ import { useEffect } from 'react'
 import { getBeautyData } from '../../Redux/ProductReducer/action'
 import { SideBarFilter } from '../../components/ProducPage/ProductPageJsx/SideBarFilter'
 import { ProductPage } from '../../components/ProducPage/ProductPageJsx/ProductPage'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
 export const Beauty = () => {
     const beauty = useSelector(state => state.productreducer.beauty);
     const dispatch = useDispatch();
 
+    const [searchParams]=useSearchParams();
+    const location=useLocation();
+  
     useEffect(() => {
-        dispatch(getBeautyData());
-    }, [])
+      if(location||beauty.length===0){
+        const sortBy=searchParams.get("sortBy");
+        const orderBy=searchParams.get("orderBy");
+        const queryParams={
+          params:{
+            _sort: sortBy,
+            _order: orderBy
+          }
+        }
+        dispatch(getBeautyData(queryParams));
+      }
+      
+    }, [location.search])
+
 
 
     return (

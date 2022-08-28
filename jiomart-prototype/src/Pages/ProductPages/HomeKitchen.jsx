@@ -11,15 +11,28 @@ import { useEffect } from 'react'
 import { getHomeKitchenData } from '../../Redux/ProductReducer/action'
 import { ProductPage } from '../../components/ProducPage/ProductPageJsx/ProductPage'
 import { SideBarFilter } from '../../components/ProducPage/ProductPageJsx/SideBarFilter'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
 export const HomeKitchen = () => {
     const homeKitchen = useSelector(state => state.productreducer.homeKitchen);
     const dispatch = useDispatch();
-
+    const [searchParams]=useSearchParams();
+    const location=useLocation();
+  
     useEffect(() => {
-        dispatch(getHomeKitchenData());
-    }, [])
-
+      if(location||homeKitchen.length===0){
+        const sortBy=searchParams.get("sortBy");
+        const orderBy=searchParams.get("orderBy");
+        const queryParams={
+          params:{
+            _sort: sortBy,
+            _order: orderBy
+          }
+        }
+        dispatch(getHomeKitchenData(queryParams));
+      }
+      
+    }, [location.search])
 
     return (
         <div style={{ "backgroundColor": "rgb(243, 243, 243)" }}>
