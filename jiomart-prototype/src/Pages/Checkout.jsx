@@ -4,7 +4,7 @@ import { Radio, Spin, Alert } from 'antd';
 import './Checkout.css';
 import CartPage from './CartPage';
 import { useHistory } from 'react-router';
-import { updateCart } from '../../Redux/Products/actions';
+import { updateCart } from '../../Redux/actions';
 const Checkout = ({ match, location, history }) => {
   const isAuth = useSelector((store) => store.Auth.isAuth);
   const dispatch = useDispatch();
