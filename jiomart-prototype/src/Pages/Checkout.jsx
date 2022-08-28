@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Radio, Spin, Alert } from 'antd';
 import './Checkout.css';
-import Basket from './Basket';
+import CartPage from './CartPage';
 import { useHistory } from 'react-router';
 import { updateCart } from '../../Redux/Products/actions';
 const Checkout = ({ match, location, history }) => {
