@@ -3,6 +3,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 
 import {
     Container,
+    Flex,
     Text,
     Button,
     Divider,

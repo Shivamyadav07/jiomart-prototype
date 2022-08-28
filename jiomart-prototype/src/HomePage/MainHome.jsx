@@ -12,7 +12,7 @@ const MainHome = () => {
      <Navbar/>
     <Slider/>
      <Section/>
-     <Footer/>
+     {/* <Footer/> */}
     </div>
   )
 }

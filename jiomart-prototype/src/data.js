@@ -256,51 +256,316 @@ export const GrocerieSlider=[
         rupees:"₹ 300",
         save: "₹ 48.00",
     },
-    // {
-    //     imgSrc: "https://www.jiomart.com/images/product/150x150/490008332/closeup-everfresh-red-hot-gel-toothpaste-150-g-pack-of-2-product-images-o490008332-p490008332-0-202206222347.jpg",
-    //     heading:"Closeup Everfresh+ Red Hot Gel Toothpaste 150 g (Pack of 2)",
-    //     price: "₹ 163.00",
-    //     mrp: "M.R.P:",
-    //     rupees:"₹ 182",
-    //     save: "₹ 19.00",
-    // },
-    // {
-    //     imgSrc: "https://www.jiomart.com/images/product/150x150/492848164/surf-excel-matic-front-load-detergent-powder-6-kg-product-images-o492848164-p591223797-0-202204291101.jpg",
-    //     heading:"Surf Excel Matic Front Load Detergent Powder 6 kg",
-    //     price: "₹ 1325.00",
-    //     mrp: "M.R.P:",
-    //     rupees:"₹ 1425",
-    //     save: "₹ 100.00",
-    // },
-    // {
-    //     imgSrc: "https://www.jiomart.com/images/product/150x150/492391349/kissan-fresh-tomato-ketchup-1-2-kg-product-images-o492391349-p590809928-0-202203150627.jpg",
-    //     heading:"Kissan Fresh Tomato Ketchup 1.2 Kg",
-    //     price: "₹ 125.00",
-    //     mrp: "M.R.P:",
-    //     rupees:"₹ 160",
-    //     save: "₹ 35.00",
-    // }, {
-    //     imgSrc: "https://www.jiomart.com/images/product/150x150/490010244/gowardhan-pure-cow-ghee-1-l-pouch-product-images-o490010244-p490010244-0-202203150918.jpg",
-    //     heading:"Govardhan Pure Ghee 1Litre (Pouch)",
-    //     price: "₹ 566.00",
-    //     mrp: "M.R.P:",
-    //     rupees:"₹ 609",
-    //     save: "₹ 43.00",
-    // }, {
-    //     imgSrc: "https://www.jiomart.com/images/product/150x150/491252835/tide-jasmine-rose-detergent-powder-5-kg-get-extra-1-kg-free-product-images-o491252835-p590838653-0-202203151949.jpg",
-    //     heading:"Tide Jasmine & Rose Detergent Powder 5 Kg",
-    //     price: "₹ 637.00",
-    //     mrp: "M.R.P:",
-    //     rupees:"₹ 635",
-    //     save: "₹ 48.00",
-    // }, {
-    //     imgSrc: "https://www.jiomart.com/images/product/150x150/491319789/sunfeast-dark-fantasy-original-choco-filled-biscuits-300-g-product-images-o491319789-p491319789-0-202205301919.jpg",
-    //     heading:"Sunfeast Dark Fantasy Original Choco Filled",
-    //     price: "₹ 99.00",
-    //     mrp: "M.R.P:",
-    //     rupees:"₹ 170",
-    //     save: "₹ 71.00",
-    // }
+    {
+        imgSrc: "https://www.jiomart.com/images/product/150x150/490008332/closeup-everfresh-red-hot-gel-toothpaste-150-g-pack-of-2-product-images-o490008332-p490008332-0-202206222347.jpg",
+        heading:"Closeup Everfresh+ Red Hot Gel Toothpaste 150 g (Pack of 2)",
+        price: "₹ 163.00",
+        mrp: "M.R.P:",
+        rupees:"₹ 182",
+        save: "₹ 19.00",
+    },
+    {
+        imgSrc: "https://www.jiomart.com/images/product/150x150/492848164/surf-excel-matic-front-load-detergent-powder-6-kg-product-images-o492848164-p591223797-0-202204291101.jpg",
+        heading:"Surf Excel Matic Front Load Detergent Powder 6 kg",
+        price: "₹ 1325.00",
+        mrp: "M.R.P:",
+        rupees:"₹ 1425",
+        save: "₹ 100.00",
+    },
+    {
+        imgSrc: "https://www.jiomart.com/images/product/150x150/492391349/kissan-fresh-tomato-ketchup-1-2-kg-product-images-o492391349-p590809928-0-202203150627.jpg",
+        heading:"Kissan Fresh Tomato Ketchup 1.2 Kg",
+        price: "₹ 125.00",
+        mrp: "M.R.P:",
+        rupees:"₹ 160",
+        save: "₹ 35.00",
+    }, {
+        imgSrc: "https://www.jiomart.com/images/product/150x150/490010244/gowardhan-pure-cow-ghee-1-l-pouch-product-images-o490010244-p490010244-0-202203150918.jpg",
+        heading:"Govardhan Pure Ghee 1Litre (Pouch)",
+        price: "₹ 566.00",
+        mrp: "M.R.P:",
+        rupees:"₹ 609",
+        save: "₹ 43.00",
+    }, {
+        imgSrc: "https://www.jiomart.com/images/product/150x150/491252835/tide-jasmine-rose-detergent-powder-5-kg-get-extra-1-kg-free-product-images-o491252835-p590838653-0-202203151949.jpg",
+        heading:"Tide Jasmine & Rose Detergent Powder 5 Kg",
+        price: "₹ 637.00",
+        mrp: "M.R.P:",
+        rupees:"₹ 635",
+        save: "₹ 48.00",
+    }, {
+        imgSrc: "https://www.jiomart.com/images/product/150x150/491319789/sunfeast-dark-fantasy-original-choco-filled-biscuits-300-g-product-images-o491319789-p491319789-0-202205301919.jpg",
+        heading:"Sunfeast Dark Fantasy Original Choco Filled",
+        price: "₹ 99.00",
+        mrp: "M.R.P:",
+        rupees:"₹ 170",
+        save: "₹ 71.00",
+    }
     
     
+]
+
+
+export const shopCategory=[
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109073_1654018509_Fruits-Veg.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109088_1654018530_Beverage-Corner.jpg",
+    },  
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109143_1656693044_Foodgrains-Oils.jpg",
+      
+    },  
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109179_1654018570_Snacks-FOOD.jpg",
+       
+    }, 
+     {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109205_1654018587_Home-care.jpg",
+       
+    },  
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109260_1654018604_personal-Care.jpg",
+        
+    }, 
+     {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109280_1654018629_Dairy-Bakery.jpg",
+        
+    }, 
+    
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109301_1654018647_Instant-Foods.jpg",
+       
+    }, 
+     {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109301_1654018647_Instant-Foods.jpg",
+        
+    }, 
+     {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109327_1654018658_Home-Kitchen.jpg",
+    
+    },  
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109344_1654018675_Mens-Wear.jpg",
+      
+    }, 
+     {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109379_1654018684_Womens-Wear.jpg",
+        
+    }, 
+     {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109408_1654018699_Kids-WEAR.jpg",
+        
+    },
+      {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1661329065_02--Shop-From-Top-Categories-Kitchen-Appliances.jpg",
+       
+    },
+    
+]
+
+export const lengthdata=[
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1659964260_Cred-pay-Package_910x278.jpg",
+    },
+
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1660291721_Twid-Banners-August_910x278.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1660291926_jiomart-svg_910x278_1.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1659290092_Paytm-910-X-278.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1660291926_jiomart-svg_910x278_1.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1659964260_Cred-pay-Package_910x278.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1661239396_910-278-freecharge.jpg",
+    },
+]
+
+
+export const categorydata=[
+    {
+        image:"https://www.jiomart.com/images/category/6/thumb/0-6.png?v=1607022291",
+        title:"Personal Care",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/7/thumb/0-7.png?v=1607022291",
+        title:"Home Care",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/10/thumb/0-10.png?v=1607022291",
+        title:"Baby Care",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/13/thumb/staples-20200710.jpg?v=1607022291",
+        title:"Staples",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/11/thumb/0-11.png?v=1607022291",
+        title:"Snacks and Branded Foods",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/12/thumb/0-12.png?v=1607022291",
+        title:"Dairy & Bakery",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/141/thumb/fruits-vegetables-20200520.png?v=1607022291",
+        title:"Fruits & Vegetables",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/3/thumb/0-3.png?v=1607022291",
+        title:"Beverages",
+    },
+]
+
+
+export const BigWomenData=[
+    {
+        image:"https://www.jiomart.com/images/cms/section/category/498/527.png?v=1651706581"
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/section/category/498/579.png?v=1651706581"
+    }
+]
+
+
+export const SmallWomenData=[
+{
+    image:"https://www.jiomart.com/images/cms/section/category/498/511.png?v=1651706581",
+},
+{
+    image:"https://www.jiomart.com/images/cms/section/category/498/525.png?v=1651706581",
+},
+{
+    image:"https://www.jiomart.com/images/cms/section/category/498/530.png?v=1651706581",
+},
+{
+    image:"https://www.jiomart.com/images/cms/section/category/498/572.png?v=1651706581",
+},
+{
+    image:"https://www.jiomart.com/images/cms/section/category/498/578.png?v=1651706581",
+},
+
+
+]
+
+
+export const Personal=[
+    {
+        image:"https://www.jiomart.com/images/category/37/thumb/all-purpose-cleaners-20200603.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/43/thumb/detergent-bars-20200520.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/17/thumb/feminine-hygiene-20200605.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/28/thumb/0-28.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/6/thumb/oral-care-20200603.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/31/thumb/0-31.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/10/thumb/0-10.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/213/thumb/paper-tissues-napkins-20210727.png",
+    },
+   
+
+]
+
+
+export const HomeData=[
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1661510233_Cheese-creative-Digital-Banner_2.jpg"
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1645558047_web_mini.jpg"
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1624538640_wm.jpg"
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1628171483_Chinese_webmini.jpg"
+    },
+]
+
+
+export const Offer=[
+    {
+        image:"https://www.jiomart.com/images/category/188/thumb/breakfast-cereals-20200603.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/117/thumb/dairy-20200522.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/17/thumb/0-17.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/15/thumb/0-15.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/135/thumb/0-135.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/25/thumb/0-25.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/26/thumb/0-26.png",
+    },
+    {
+        image:"https://www.jiomart.com/images/category/221/thumb/papads-ready-to-fry-20200520.png",
+    },
+]
+
+export const downData=[
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1661278487_Powered-TB-Banner-4---600X350.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1626259904_wm.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1654538046_600x350-Hot-Spot.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1660816405_01--Apples-Banner_600x350.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1661279354_Apple_Cider_Vinegar-600x350.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1661538125_600x350_kEVENTER.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1661538198_600X350_SENSODYNE.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1660036332_Mobilebanner_StaplesWeek_2_600x350.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1626448037_snackswebmini.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1659004297_600x350-Buy-at-99.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1641903326_Your-Favourite-Noodle_600x350.jpg",
+    },
+    {
+        image:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1661278487_Powered-TB-Banner-4---600X350.jpg",
+    },
 ]

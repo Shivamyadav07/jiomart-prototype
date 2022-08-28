@@ -1,9 +1,10 @@
 import React from 'react'
+import { HamburgerIcon } from '@chakra-ui/icons';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
-// import GroceriesData from "../HomePage/Search/data.json";
-
+import GroceriesData from "../HomePage/Search/data.json";
+import SearchBar from './Search/SearchBar';
 import styles from "../HomePage/HomePageCss/Header.module.css";
 import SideBar from './Sidebar';
 
@@ -22,8 +23,7 @@ const Header = () => {
         </div>
 
         <div className={styles.seesaw}>
-            <input className={styles.searchItem}
-              placeholder="Search essential, groceries, and more..." />
+            <SearchBar  data={GroceriesData} />
         </div>
 
         <Link to="/">

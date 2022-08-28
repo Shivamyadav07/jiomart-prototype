@@ -3,7 +3,7 @@
     height:32rem;
     width:84.2rem;
     /* border: 1px solid rgb(165, 20, 117); */
-    margin-top: 300rem;
+   
    
     }
 
@@ -34,4 +34,13 @@
     .footerright {
         width: 22rem;
     }
-    
+    .line1{
+        height:19rem;
+        margin-top: 1rem;;
+        border:1px solid rgb(226, 224, 224);
+    }
+    .horz{
+        width: 98%;
+        margin: auto;
+        border:1px solid rgb(226, 224, 224);
+    }
