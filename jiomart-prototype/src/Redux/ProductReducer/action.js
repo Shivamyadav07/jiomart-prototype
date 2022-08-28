@@ -23,9 +23,9 @@ import {
     GET_PREMIUMFRUUIT_SUCCESS
 } from "./actionTypes"
 
-export const getGroceriesData = () => (dispatch) => {
+export const getGroceriesData = (params) => (dispatch) => {
     dispatch({ type: GET_GROCERIES_REQUEST, payload: true })
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Groceries")
+    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Groceries",params)
         .then((res) => {
             console.log(res.data);
             dispatch({ type: GET_GROCERIES_SUCCESS, payload: res.data })
@@ -34,9 +34,9 @@ export const getGroceriesData = () => (dispatch) => {
         })
 }
 
-export const getPremiumfruitData = () => (dispatch) => {
+export const getPremiumfruitData = (params) => (dispatch) => {
     dispatch({ type: GET_PREMIUMFRUUIT_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/PremiumFruits")
+    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/PremiumFruits",params)
         .then((res) => {
             dispatch({ type: GET_PREMIUMFRUUIT_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -44,9 +44,9 @@ export const getPremiumfruitData = () => (dispatch) => {
         })
 }
 
-export const getHomeKitchenData = () => (dispatch) => {
+export const getHomeKitchenData = (params) => (dispatch) => {
     dispatch({ type: GET_HOMEKITCHEN_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/HomeKitchen")
+    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/HomeKitchen",params)
         .then((res) => {
             dispatch({ type: GET_HOMEKITCHEN_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -54,9 +54,9 @@ export const getHomeKitchenData = () => (dispatch) => {
         })
 }
 
-export const getElectronicsData = () => (dispatch) => {
+export const getElectronicsData = (params) => (dispatch) => {
     dispatch({ type: GET_ELECTRONICS_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Electronics")
+    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Electronics",params)
         .then((res) => {
             dispatch({ type: GET_ELECTRONICS_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -64,9 +64,9 @@ export const getElectronicsData = () => (dispatch) => {
         })
 }
 
-export const getFashionData = () => (dispatch) => {
+export const getFashionData = (params) => (dispatch) => {
     dispatch({ type: GET_FASHION_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Fashion")
+    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Fashion",params)
         .then((res) => {
             dispatch({ type: GET_FASHION_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -74,9 +74,9 @@ export const getFashionData = () => (dispatch) => {
         })
 }
 
-export const getBeautyData = () => (dispatch) => {
+export const getBeautyData = (params) => (dispatch) => {
     dispatch({ type: GET_BEAUTY_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Beauty")
+    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Beauty",params)
         .then((res) => {
             dispatch({ type: GET_BEAUTY_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -84,9 +84,9 @@ export const getBeautyData = () => (dispatch) => {
         })
 }
 
-export const getJewelleryData = () => (dispatch) => {
+export const getJewelleryData = (params) => (dispatch) => {
     dispatch({ type: GET_JEWELLERY_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Jewellery")
+    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Jewellery",params)
         .then((res) => {
             dispatch({ type: GET_JEWELLERY_SUCCESS, payload: res.data });
         }).catch(() => {

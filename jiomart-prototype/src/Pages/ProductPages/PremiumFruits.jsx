@@ -11,14 +11,28 @@ import { useEffect } from 'react'
 import { getPremiumfruitData } from '../../Redux/ProductReducer/action'
 import { SideBarFilter } from '../../components/ProducPage/ProductPageJsx/SideBarFilter'
 import { ProductPage } from '../../components/ProducPage/ProductPageJsx/ProductPage'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
 export const PremiumFruits = () => {
     const premiumFruit = useSelector(state => state.productreducer.premiumFruit);
     const dispatch = useDispatch();
-
+    const [searchParams]=useSearchParams();
+    const location=useLocation();
+  
     useEffect(() => {
-        dispatch(getPremiumfruitData());
-    }, [])
+      if(location||premiumFruit.length===0){
+        const sortBy=searchParams.get("sortBy");
+        const orderBy=searchParams.get("orderBy");
+        const queryParams={
+          params:{
+            _sort: sortBy,
+            _order: orderBy
+          }
+        }
+        dispatch(getPremiumfruitData(queryParams));
+      }
+      
+    }, [location.search])
 
 
     return (

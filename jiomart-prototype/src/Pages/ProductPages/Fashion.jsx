@@ -11,15 +11,28 @@ import { useEffect } from 'react'
 import { getFashionData } from '../../Redux/ProductReducer/action'
 import { SideBarFilter } from '../../components/ProducPage/ProductPageJsx/SideBarFilter'
 import { ProductPage } from '../../components/ProducPage/ProductPageJsx/ProductPage'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
 export const Fashion = () => {
     const fashion = useSelector(state => state.productreducer.fashion);
     const dispatch = useDispatch();
-
+    const [searchParams]=useSearchParams();
+    const location=useLocation();
+  
     useEffect(() => {
-        dispatch(getFashionData());
-    }, [])
-
+      if(location||fashion.length===0){
+        const sortBy=searchParams.get("sortBy");
+        const orderBy=searchParams.get("orderBy");
+        const queryParams={
+          params:{
+            _sort: sortBy,
+            _order: orderBy
+          }
+        }
+        dispatch(getFashionData(queryParams));
+      }
+      
+    }, [location.search])
 
     return (
         <div style={{ "backgroundColor": "rgb(243, 243, 243)" }}>
