@@ -4,7 +4,6 @@
     display: flex;
     width: 910px;
     justify-content:space-between;
-    margin-left: -20px;
 }
 .productNum{
     padding: 5px;
