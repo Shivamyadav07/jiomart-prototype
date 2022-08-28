@@ -13,7 +13,6 @@ import { Groceries } from "./ProductPages/Groceries";
 import { HomeKitchen } from "./ProductPages/HomeKitchen";
 import { Jewellery } from "./ProductPages/Jewellery";
 import { PremiumFruits } from "./ProductPages/PremiumFruits";
-import Checkout from "./Checkout";
 
 const MainRoutes = () => {
   return (
@@ -31,7 +30,6 @@ const MainRoutes = () => {
       <Route path="/groceries" element={<Groceries/>}></Route>
       <Route path="/premiumfruits" element={<PremiumFruits/>}></Route>
       <Route path="/product/:id" element={<DescriptionPage/>}></Route>
-      <Route path="/checkout" element={<Checkout/>}></Route>
     </Routes>
   );
 };
