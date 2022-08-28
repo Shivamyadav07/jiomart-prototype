@@ -11,42 +11,66 @@ import {
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
 import { getGroceriesData } from '../../Redux/ProductReducer/action'
+import { useLocation, useSearchParams } from 'react-router-dom'
+import Navbar from '../../HomePage/Navbar'
+import Header from '../../HomePage/Header'
+import Footer from '../../HomePage/Footer'
 
 export const Groceries = () => {
   const groceries = useSelector(state => state.productreducer.groceries);
   const dispatch = useDispatch();
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
 
   useEffect(() => {
-    dispatch(getGroceriesData());
-  }, [])
+    if (location || groceries.length === 0) {
+      const sortBy = searchParams.get("sortBy");
+      const orderBy = searchParams.get("orderBy");
+      const queryParams = {
+        params: {
+          _sort: sortBy,
+          _order: orderBy
+        }
+      }
+      dispatch(getGroceriesData(queryParams));
+    }
+
+  }, [location.search])
 
 
   return (
-    <div className={styles.home}>
-      <div className={styles.toplink}>
-        <Breadcrumb
-          spacing='8px' separator=">">
-          <BreadcrumbItem>
-            <BreadcrumbLink href='#'>Home</BreadcrumbLink>
-          </BreadcrumbItem>
+    <div style={{ "marginTop": "100px", }}>
+      <Header />
+      <Navbar />
+      <div style={{ "backgroundColor": "rgb(243, 243, 243)" }}>
+        <div className={styles.home}>
+          <div className={styles.toplink}>
+            <Breadcrumb
+              spacing='8px' separator=">">
+              <BreadcrumbItem>
+                <BreadcrumbLink href='#'>Home</BreadcrumbLink>
+              </BreadcrumbItem>
 
-          <BreadcrumbItem>
-            <BreadcrumbLink href='#'>AllCategory</BreadcrumbLink>
-          </BreadcrumbItem>
+              <BreadcrumbItem>
+                <BreadcrumbLink href='#'>AllCategory</BreadcrumbLink>
+              </BreadcrumbItem>
 
-          <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href='#'>Groceries</BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
+              <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink href='#'>Groceries</BreadcrumbLink>
+              </BreadcrumbItem>
+            </Breadcrumb>
+          </div>
+
+          <div className={styles.maindiv} >
+            <SideBarFilter />
+            <ProductPage
+              poster='https://www.jiomart.com/images/category/2/groceries-20210201.jpeg'
+              data={groceries}
+            />
+          </div>
+        </div>
       </div>
-
-      <div className={styles.maindiv} >
-        <SideBarFilter />
-        <ProductPage
-          poster='https://www.jiomart.com/images/category/2/groceries-20210201.jpeg'
-          data={groceries}
-        />
-      </div>
+      <Footer />
     </div>
   )
 }

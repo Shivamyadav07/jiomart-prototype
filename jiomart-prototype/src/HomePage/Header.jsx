@@ -26,7 +26,7 @@ const Header = () => {
         </div>
 
        <div className={styles.side} style={{marginRight:"3rem"}}>
-        <Link to="/">
+        <Link to="/signup">
         <div className={styles.navicon}>
             <PersonIcon style={{fontSize:"1.8rem"}} />
             <div className={styles.navText}
@@ -36,9 +36,9 @@ const Header = () => {
         </div>
         </Link>
 
-        <Link to="/">
+        <Link to="/cart">
         <div className={styles.mycart}>
-            <ShoppingCartIcon style={{fontSize:"1.8rem"}}/>
+            <ShoppingCartIcon style={{fontSize:"1.8rem"}}/>        
             <div className={styles.navText}>Cart</div>
         </div>
         </Link>

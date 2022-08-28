@@ -3,7 +3,7 @@ import styles from '../ProductPageModuleCss/MultipleProductsSection.module.css'
 import { Pagination } from './Pagination'
 import { SingleProductCard } from './SingleProductCard'
 
-export const MultipleProductsSection = ({data}) => {
+export const MultipleProductsSection = ({ data }) => {
   return (
     <div className={styles.maindiv}>
       <div className={styles.title}>
@@ -11,12 +11,12 @@ export const MultipleProductsSection = ({data}) => {
       </div>
       <div className={styles.productdiv}>
         {
-          data.map((e)=>{
+          data.map((e) => {
             return <SingleProductCard item={e} />
           })
         }
       </div>
-      <Pagination/>
+      <Pagination />
     </div>
   )
 }

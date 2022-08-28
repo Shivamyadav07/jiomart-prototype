@@ -5,4 +5,5 @@
 .image{
     width: 910px;
     height: 182px;
+    object-fit: cover;
 }

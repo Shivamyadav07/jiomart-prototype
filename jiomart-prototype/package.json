@@ -13,6 +13,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "@tippyjs/react": "^4.2.6",
+    "antd": "^4.22.8",
     "axios": "^0.27.2",
     "framer-motion": "^7.2.0",
     "json-server": "^0.17.0",
