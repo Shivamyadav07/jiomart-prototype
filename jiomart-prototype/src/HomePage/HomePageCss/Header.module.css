@@ -9,11 +9,12 @@
     position: fixed;
     top: 0;
     z-index: 5;
+
     /* border:1px solid red; */
 }
 .navbar {
     display: grid;
-    grid-template-columns: 7rem 7rem 52rem 10rem 8rem;
+    grid-template-columns: 7rem 7rem 52rem 2rem 8rem;
     align-items: center;
     text-align: center;
     color: white;
@@ -54,31 +55,111 @@
 
 }
 
+.side{
+    display: flex;
+    /* border:1px solid red; */
+    height:2.5rem;
+    width:18rem;
+}
+
 
 
 .navicon {
   display:flex;
     cursor: pointer;
-    /* border:1px solid rgb(59, 59, 61); */
-
+   /* border:1px solid rgb(200, 200, 211); */
+   height:2.5rem;
+   width:10rem;
+   margin-right:1rem;
 }
 
  .navText {
-  margin: auto;
+    /* border:1px solid red; */
     font-size:0.8rem;
     font-weight: 600;
-    margin-left:0.1rem;
+    margin: auto;
+    margin-left: 0.3rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .signU{
     margin-top:0.3rem;
     /* border:1px solid rgb(72, 9, 124); */
-    position: fixed;
-  bottom: 0;
-  right: 0; 
+   
 }
 
+.mycart{
+    display:flex;
+    /* border:1px solid black; */
+    height:2rem;
+    width:5rem;
+}
+.searchInputs {
+    display: flex;
+    background-color: white;
+    border-radius: 0.4rem;
+    width:46rem;
+
+}
+
+
+  .search{
+    /* border:1px solid rgb(184, 187, 184); */
+    width:46rem;
+    margin-left: 2rem;
+    height:2.8rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.2rem;
+  }
+
+  .put{
+    /* border:1px solid black; */
+    margin-left:0.2rem;
+    color: black;
+    width:100%;
+    font-size: 0.9rem;
+  }
+  .searchIcon {
+    height: 44px;
+    width: 52px;
+    display: grid;
+    place-items: center;
+    margin-left: 30rem;
+    border-bottom-right-radius: 0.3rem;
+    /* border:1px solid rgb(189, 189, 30); */
+  
+  }
+  
+  input:focus {
+    outline: none;
+  
+  }
+  
+  .dataResult {
+    margin-top: 5px;
+    height: 22rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+    border:1px solid rgb(10, 147, 156);
+    text-align: left;
+  }
+  /* .clearBtn {
+    border:1px solid green;
+    cursor: pointer;
+    color:green;
+    /* color:rgb(214, 211, 211); */
+   
+   .dataItem {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+   margin-left: 1rem;
+   overflow: hidden;
+  }
 
 
 
