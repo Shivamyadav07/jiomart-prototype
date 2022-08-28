@@ -26,7 +26,7 @@ const Header = () => {
         </div>
 
        <div className={styles.side} style={{marginRight:"3rem"}}>
-        <Link to="/signup">
+        <Link to="/login">
         <div className={styles.navicon}>
             <PersonIcon style={{fontSize:"1.8rem"}} />
             <div className={styles.navText}
