@@ -31,7 +31,6 @@ import {
 } from "@chakra-ui/react";
 import ProductCard from "../components/ProductCard";
 import CartOrderPayment from "../components/CartOrderPayment";
-import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartData } from "../Redux/CartReducer/action";
 import { Link } from "react-router-dom";

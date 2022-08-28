@@ -1,9 +1,9 @@
 import React from 'react'
 import { HamburgerIcon } from '@chakra-ui/icons';
+import {Link } from "react-router-dom";
 
 import {
     Container,
-    Flex,
     Text,
     Button,
     Divider,
@@ -46,7 +46,8 @@ import {
                   <DrawerHeader bgColor="#008ecc">
 
                     <Stack direction='row' my='1'>
-                      <Avatar src='https://bit.ly/broken-link' bg='#008ecc.500' borderColor='gray.200' size='sm'/>
+                <Link to="/signup"><Avatar src='https://bit.ly/broken-link' bg='#008ecc.500'
+                 borderColor='gray.200' size='sm'/></Link>
                        <Text color="white">Hello, Sign in</Text>
                     </Stack>
                 
@@ -58,7 +59,7 @@ import {
                   </DrawerHeader>
 
                   <DrawerBody>
-                    <Text lineHeight='2.8rem' fontSize="md"  fontWeight="black.300">Home</Text>
+         <Link to="/"><Text lineHeight='2.8rem' fontSize="md"  fontWeight="black.300">Home</Text></Link>
                     <Text lineHeight='2.8rem' fontSize="md" fontWeight="black.300">Shop by Category</Text>
                     <Text lineHeight='2.8rem' fontSize="md" fontWeight="black.300">My List</Text>
                     <Text lineHeight='2.8rem' fontSize="md" fontWeight="black.300">JioMart Wallet</Text>
@@ -69,7 +70,7 @@ import {
                   
                     <Divider  borderColor="gray.600" />
 
-                    <Text lineHeight='2.8rem' fontSize="md"  fontWeight="black.300">My Account</Text>
+  <Link to="/signup"><Text lineHeight='2.8rem' fontSize="md"  fontWeight="black.300">My Account</Text></Link> 
                     <Text lineHeight='2.8rem' fontSize="md" fontWeight="black.300">Need Help</Text>
                     <Text lineHeight='2.8rem' fontSize="md" fontWeight="black.300">About us</Text>
                     <Text lineHeight='2.8rem' fontSize="md" fontWeight="black.300">Guide</Text>

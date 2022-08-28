@@ -11,6 +11,8 @@ import Sliding from './Slide/Sliding';
 import ShopCategory from './Slide/ShopCategory';
 import Category from './Slide/Category';
 import Footer from './Footer';
+import {Link} from 'react-router-dom';
+
 
 const Section = () => {
 
@@ -38,6 +40,7 @@ const Section = () => {
           <Sliding/>
        </div>
 
+<Link to='/groceries'>
        <div className={styles.groceries}>
        <h3 class={styles.text}>Offers on daily essentials</h3>
 
@@ -52,13 +55,13 @@ const Section = () => {
             ))}
        </div>
      </div>
-
+     </Link>
       
       <div>
         <Category/>
       </div>
 
-
+<Link to="/fashion">
       <div className={styles.menimg}>
         <h3 class={styles.text}>Womens Fashion</h3>
        <div className={styles.menf}>
@@ -70,8 +73,9 @@ const Section = () => {
             ))}
        </div>
     </div>
-
+    </Link>
      
+     <Link to="/fashion">
     <div className={styles.menssmall}>
      <div className={styles.mensfashion}>
             {SmallWomenData.map((women)=> (
@@ -82,6 +86,8 @@ const Section = () => {
             ))}
        </div>
      </div>
+     </Link>
+
 
      <div className={styles.posterimg}>
        <div className={styles.abovefooter}>
@@ -94,7 +100,7 @@ const Section = () => {
        </div>
     </div>
 
-
+  <Link to="groceries">
     <div className={styles.groceries}>
        <h3 class={styles.text}>Offers on Household and Personal Care</h3>
        <div className={styles.groceriesD}>
@@ -108,6 +114,7 @@ const Section = () => {
             ))}
        </div>
      </div>
+     </Link>
 
 
      <div className={styles.posterimg1}>
@@ -122,7 +129,7 @@ const Section = () => {
     </div>
 
 
-    
+    <Link to='/groceries'>
     <div className={styles.groceries}>
        <h3 class={styles.text}>Offers on Household and Personal Care</h3>
        <div className={styles.groceriesD}>
@@ -136,6 +143,7 @@ const Section = () => {
             ))}
        </div>
      </div>
+     </Link>
 
 
 
@@ -152,7 +160,7 @@ const Section = () => {
        </div>
      </div>
 
-
+<Link to='/fashion'>
        <div className={styles.kidssmall}>
        <h3 class={styles.text}>Kid's Fashion</h3>
 
@@ -165,8 +173,9 @@ const Section = () => {
             ))}
        </div>
      </div>
+     </Link>
 
-
+<Link to='/fashion'>
        <div className={styles.menimg}>
         <h3 class={styles.text}>Mens Fashion</h3>
        <div className={styles.menf}>
@@ -178,7 +187,9 @@ const Section = () => {
             ))}
        </div>
     </div>
+    </Link>
 
+  <Link to="/fashion">
     <div className={styles.menssmall}>
      <div className={styles.mensfashion}>
             {mensdata.map((pro)=> (
@@ -189,7 +200,7 @@ const Section = () => {
             ))}
        </div>
      </div>
-
+     </Link>
 
      <div className={styles.posterimg3}>
        <div className={styles.abovefooter}>

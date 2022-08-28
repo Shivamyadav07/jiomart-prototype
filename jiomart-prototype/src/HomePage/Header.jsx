@@ -1,5 +1,4 @@
 import React from 'react'
-import { HamburgerIcon } from '@chakra-ui/icons';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
@@ -26,21 +25,25 @@ const Header = () => {
             <SearchBar  data={GroceriesData} />
         </div>
 
+       <div className={styles.side} style={{marginRight:"3rem"}}>
         <Link to="/signup">
         <div className={styles.navicon}>
-            <PersonIcon style={{fontSize:"1.9rem", marginLeft:"0.5rem"}}/>
-            <div className={styles.navText}>
+            <PersonIcon style={{fontSize:"1.8rem"}} />
+            <div className={styles.navText}
+            style={{marginBottom:"0.7rem"}}>
                 Sign In / Sign Up
             </div>
         </div>
         </Link>
 
         <Link to="/cart">
-        <div className={styles.navicon}>
-            <ShoppingCartIcon style={{marginLeft:"1rem"}}/>
+        <div className={styles.mycart}>
+            <ShoppingCartIcon style={{fontSize:"1.8rem"}}/>        
             <div className={styles.navText}>Cart</div>
         </div>
         </Link>
+        </div>
+
         </div>
         </div>
     

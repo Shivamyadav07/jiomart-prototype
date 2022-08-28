@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./SearchBar.css";
 import CloseIcon from '@mui/icons-material/Close';
+import styles from "../HomePageCss/Header.module.css";
+
 
 function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -26,32 +27,43 @@ function SearchBar({ placeholder, data }) {
   };
 
   return (
-    <div className="header">
-
-    <div className="search">
-      <div className="searchInputs">
-        <input className="put"
+    <div className={styles.search}>
+      <div className={styles.searchInputs}>
+        <input className={styles.put}
           type="text"
-          placeholder="Search essential, groceries, and more..."
+          placeholder="Search essential, groceries, & more..."
           value={wordEntered}
           onChange={handleFilter}
         />
-        <div className="searchIcon">
+        <div className={styles.searchIcon} >
             <CloseIcon className="clearBtn" 
+            style={{
+            color:"rgb(184, 187, 184)",
+            cursor:"pointer",
+            }}
             onClick={clearInput} />  
         </div>
       </div>
       {filteredData.length !== 0 && (
-        <div className="dataResult">
+        <div className={styles.dataResult}>
           {filteredData.slice(0, 15).map((value, key) => {
             return (
+              <p className={styles.dataItem} rel="_blank">
                 <p>{value.title} </p>
+              </p>
             );
           })}
         </div>
       )}
     </div>
-    </div>
+
+
+    
+
+
+
+
+
   );
 }
 
