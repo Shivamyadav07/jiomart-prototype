@@ -339,7 +339,9 @@ const OrderSummaryPage = () => {
             </VStack>
           </Container>
           <Box align="right" my="3">
-            <Link to={{ pathname: "/payment" }}>
+            <Link to="/payment" state={{mrpTotal: location.state.mrpTotal,
+                totalDiscount: location.state.totalDiscount,
+                coupDiscount: location.state.coupDiscount}}> 
               <Button w="55%" colorScheme="teal">
                 Make Payment
               </Button>
