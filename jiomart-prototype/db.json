@@ -9,26 +9,6 @@
       "repassword": "12345",
       "otp": "5555",
       "id": 1
-    },
-    {
-      "phnop": "6386966400",
-      "fistname": "Shivam",
-      "lastname": "yadav",
-      "email": "shivamvnsindia@gmail.com",
-      "password": "1111",
-      "repassword": "1111",
-      "otp": "0000",
-      "id": 2
-    },
-    {
-      "phnop": "6386966401",
-      "fistname": "Shivam",
-      "lastname": "yadav",
-      "email": "shivamvnsindia@gmail.com",
-      "password": "1111",
-      "repassword": "1111",
-      "otp": "0000",
-      "id": 3
     }
   ]
 }
