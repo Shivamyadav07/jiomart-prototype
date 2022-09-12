@@ -10,9 +10,10 @@ https://drive.google.com/file/d/1SFAX3JG8b8mQSy8UbDIxaU7vYe9iuD0v/view
 <h2> Deployed Link </h2>
 https://jiomart-prototype.netlify.app/
 
+<!-- <a href="https://ibb.co/LxtfxyM"><img src="https://i.ibb.co/D9Cn9FN/image.png" alt="image" border="0"></a> -->
 
 <h2> Snapshots </h2>
-![pic-1](https://user-images.githubusercontent.com/91047001/166081534-2617f82c-b68c-438f-901a-44462f0a276a.JPG)
+<img src="https://ibb.co/LxtfxyM"><img src="https://i.ibb.co/D9Cn9FN/image.png">
 
 
 ![pic-2](https://user-images.githubusercontent.com/91047001/166081888-ebeb1e3f-7718-4140-9f60-398f44de8559.JPG)
