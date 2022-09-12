@@ -10,12 +10,23 @@ https://drive.google.com/file/d/1SFAX3JG8b8mQSy8UbDIxaU7vYe9iuD0v/view
 <h2> Deployed Link </h2>
 https://jiomart-prototype.netlify.app/
 <h2> Snapshots </h2>
+<p>Home Page</p>
 <img src="https://github.com/Shivamyadav07/prickly-partner-2503/blob/main/jiomart-prototype/public/Imgs/home%20page.png?raw=true" alt="imageHomePage">
 
-![pic-2](https://user-images.githubusercontent.com/91047001/166081888-ebeb1e3f-7718-4140-9f60-398f44de8559.JPG)
+<p>Grocerries Page</p>
+<img src="https://github.com/Shivamyadav07/prickly-partner-2503/blob/main/jiomart-prototype/public/Imgs/grocerries%20page.png?raw=true" alt="imageGrocerriesPage">
 
-![pic-3](https://user-images.githubusercontent.com/91047001/166081897-13eaa3a4-8a93-4795-8ae0-a92d834e6f7f.JPG)
+<p>Fashion Page</p>
+<img src="https://github.com/Shivamyadav07/prickly-partner-2503/blob/main/jiomart-prototype/public/Imgs/Fashion%20page.png?raw=true" alt="imageFashionPage">
 
+<p>Sinup Page</p>
+<img src="https://github.com/Shivamyadav07/prickly-partner-2503/blob/main/jiomart-prototype/public/Imgs/signup%20page.png?raw=true" alt="imageSinupPage">
+
+<p>Sinin Page</p>
+<img src="https://github.com/Shivamyadav07/prickly-partner-2503/blob/main/jiomart-prototype/public/Imgs/sign%20in%20page.png?raw=true" alt="imageSininPage">
+
+<p>Cart Page</p>
+<img src="https://github.com/Shivamyadav07/prickly-partner-2503/blob/main/jiomart-prototype/public/Imgs/cart%20page.png?raw=true" alt="imageCartPage">
 
 <h2> Technology We Used 💻 </h2>
 <ul>
