@@ -60,7 +60,7 @@ export const DescriptionPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://shivam-yadav-json-server-data.herokuapp.com/AllProducts/${id}`)
+    axios.get(`https://shivam-yadav-json-server-data.herokuapp.com/AllProducts/${id}`)
       .then((res) => {
         console.log(res.data)
         setData(res.data);
