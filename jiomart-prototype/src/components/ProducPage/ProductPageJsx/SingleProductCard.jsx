@@ -11,6 +11,7 @@ export const SingleProductCard = ({ item }) => {
         console.log("Item-to-Cart:", item);
         const payload = { ...item, count: 1 }
         dispatch(addCartData(payload))
+        alert("Product added to cart");
     };
     return (
         <Box className={styles.container}
