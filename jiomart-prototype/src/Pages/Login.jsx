@@ -7,6 +7,7 @@ import {
   InputGroup,
   InputLeftAddon,
   Text,
+  useMediaQuery
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 // import { BsChevronRight } from "react-icons/bs";
@@ -23,6 +24,8 @@ import styles from "./Login.module.css";
 const Login = () => {
   const users = useSelector((store) => store.authreducer.token);
   const [phno, setphno] = useState("");
+  const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
+
   const [otp, setotp] = useState("");
   const dispatch = useDispatch();
   const [toggle, settoggle] = useState(false);
@@ -80,7 +83,7 @@ const Login = () => {
    </Box>
     <Box m="200px"  >
      
-      <Flex   gap="150px">
+      <Flex  direction={isLargerThan800?"row":"column"}  gap="150px">
         <Box>
           <Image borderRadius="10px 0px 0px 10px"
             src="https://www.jiomart.com/msassets/images/login-banner.jpg"
