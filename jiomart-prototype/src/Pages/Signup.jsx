@@ -10,6 +10,7 @@ import {
   InputRightElement,
   Stack,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
@@ -23,6 +24,7 @@ import Footer from "../HomePage/Footer";
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
   const users = useSelector((store) => store.authreducer.token);
   const [userinput, setuserinput] = useState({});
   const [savedata, setsavedata] = useState({});
@@ -63,7 +65,7 @@ const Signup = () => {
     <Navbar/>
   </Box>
     <Box m="200px">
-      <Flex  gap="150px">
+      <Flex  gap="150px" direction={isLargerThan800?"row":"column"} >
         <Box >
           <Image borderRadius="10px 0px 0px 0px"
             src="https://www.jiomart.com/msassets/images/login-banner.jpg"
