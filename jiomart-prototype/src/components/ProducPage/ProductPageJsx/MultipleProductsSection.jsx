@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../ProductPageModuleCss/MultipleProductsSection.module.css'
 import { Pagination } from './Pagination'
 import { SingleProductCard } from './SingleProductCard'
+import { Spinner } from '@chakra-ui/react'
 
 export const MultipleProductsSection = ({ data }) => {
   return (
@@ -9,13 +10,24 @@ export const MultipleProductsSection = ({ data }) => {
       <div className={styles.title}>
         ALL PRODUCTS
       </div>
-      <div className={styles.productdiv}>
-        {
-          data.map((e) => {
-            return <SingleProductCard item={e} />
-          })
-        }
-      </div>
+      {
+        data.length === 0
+          ?
+          <Spinner
+            style={{ "marginLeft": "48%" }}
+            size={"xl"}
+            color="red"
+          />
+          :
+          <div className={styles.productdiv}>
+            {
+              data.map((e) => {
+                return <SingleProductCard item={e} />
+              })
+            }
+          </div>
+      }
+
       <Pagination />
     </div>
   )
