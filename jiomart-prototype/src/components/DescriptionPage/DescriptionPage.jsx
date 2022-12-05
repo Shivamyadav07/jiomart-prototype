@@ -60,7 +60,7 @@ export const DescriptionPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`https://shivam-yadav-json-server-data.herokuapp.com/AllProducts/${id}`)
+    axios.get(`https://super-paint-flamingo.glitch.me/AllProducts/${id}`)
       .then((res) => {
         console.log(res.data)
         setData(res.data);

@@ -25,7 +25,7 @@ import {
 
 export const getGroceriesData = (params) => (dispatch) => {
     dispatch({ type: GET_GROCERIES_REQUEST, payload: true })
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Groceries",params)
+    axios.get("https://super-paint-flamingo.glitch.me/Groceries",params)
         .then((res) => {
             console.log(res.data);
             dispatch({ type: GET_GROCERIES_SUCCESS, payload: res.data })
@@ -36,7 +36,7 @@ export const getGroceriesData = (params) => (dispatch) => {
 
 export const getPremiumfruitData = (params) => (dispatch) => {
     dispatch({ type: GET_PREMIUMFRUUIT_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/PremiumFruits",params)
+    axios.get("https://super-paint-flamingo.glitch.me/PremiumFruits",params)
         .then((res) => {
             dispatch({ type: GET_PREMIUMFRUUIT_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -46,7 +46,7 @@ export const getPremiumfruitData = (params) => (dispatch) => {
 
 export const getHomeKitchenData = (params) => (dispatch) => {
     dispatch({ type: GET_HOMEKITCHEN_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/HomeKitchen",params)
+    axios.get("https://super-paint-flamingo.glitch.me/HomeKitchen",params)
         .then((res) => {
             dispatch({ type: GET_HOMEKITCHEN_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -56,7 +56,7 @@ export const getHomeKitchenData = (params) => (dispatch) => {
 
 export const getElectronicsData = (params) => (dispatch) => {
     dispatch({ type: GET_ELECTRONICS_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Electronics",params)
+    axios.get("https://super-paint-flamingo.glitch.me/Electronics",params)
         .then((res) => {
             dispatch({ type: GET_ELECTRONICS_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -66,7 +66,7 @@ export const getElectronicsData = (params) => (dispatch) => {
 
 export const getFashionData = (params) => (dispatch) => {
     dispatch({ type: GET_FASHION_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Fashion",params)
+    axios.get("https://super-paint-flamingo.glitch.me/Fashion",params)
         .then((res) => {
             dispatch({ type: GET_FASHION_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -76,7 +76,7 @@ export const getFashionData = (params) => (dispatch) => {
 
 export const getBeautyData = (params) => (dispatch) => {
     dispatch({ type: GET_BEAUTY_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Beauty",params)
+    axios.get("https://super-paint-flamingo.glitch.me/Beauty",params)
         .then((res) => {
             dispatch({ type: GET_BEAUTY_SUCCESS, payload: res.data });
         }).catch(() => {
@@ -86,7 +86,7 @@ export const getBeautyData = (params) => (dispatch) => {
 
 export const getJewelleryData = (params) => (dispatch) => {
     dispatch({ type: GET_JEWELLERY_REQUEST, payload: true });
-    axios.get("https://shivam-yadav-json-server-data.herokuapp.com/Jewellery",params)
+    axios.get("https://super-paint-flamingo.glitch.me/Jewellery",params)
         .then((res) => {
             dispatch({ type: GET_JEWELLERY_SUCCESS, payload: res.data });
         }).catch(() => {
