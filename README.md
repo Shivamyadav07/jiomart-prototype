@@ -1,4 +1,4 @@
-# prickly-partner-2503
+# Jio Mart
 This is clone of jiomart.com, It is an e-commerce platform where users may purchase various types of items like clothes,
 shoes, kitchen items and many more. Where we have used HTML, CSS and Advance Javascript to acheive this. In this project we
 have tried to clone the “Jio mart ” website. We had build up all our efforts to do our best in this project.
